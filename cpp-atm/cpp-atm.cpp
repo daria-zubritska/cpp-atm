@@ -4,5 +4,5 @@
 
 int main()
 {
-    DBController db = DBController();
+    AuthDataDao d = AuthDataDao();
 }
