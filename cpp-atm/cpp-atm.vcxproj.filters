@@ -13,13 +13,16 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\DBController">
+      <UniqueIdentifier>{a0ab13b2-fb24-42b6-839e-796378759388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\DBControllerImpl">
+      <UniqueIdentifier>{8401b0d9-1665-4119-9337-09eee44da213}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DBController.cpp">
-      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="sqlite\shell.c">
       <Filter>Source Files</Filter>
@@ -27,10 +30,36 @@
     <ClCompile Include="sqlite\sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DBController.cpp">
+      <Filter>Resource Files\DBControllerImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthDataDao.cpp">
+      <Filter>Resource Files\DBControllerImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="TransactionDao.cpp">
+      <Filter>Resource Files\DBControllerImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="CardDao.cpp">
+      <Filter>Resource Files\DBControllerImpl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DBController</Filter>
     </ClInclude>
+    <ClInclude Include="AuthDataDao.h">
+      <Filter>Header Files\DBController</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionDao.h">
+      <Filter>Header Files\DBController</Filter>
+    </ClInclude>
+    <ClInclude Include="CardDao.h">
+      <Filter>Header Files\DBController</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="init.txt">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

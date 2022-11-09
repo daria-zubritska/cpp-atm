@@ -1,8 +1,11 @@
-#include <iostream>
+﻿#include <iostream>
 #include "DBController.h"
+#include "AuthDataDao.h"
 
 
 int main()
 {
-    AuthDataDao d = AuthDataDao();
+    DBController* db = new DBController();
+    //видалення об'єкту відбувається у деструкторі дао
+    AuthDataDao d = AuthDataDao(db);
 }
