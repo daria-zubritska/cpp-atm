@@ -154,7 +154,9 @@
     <ClInclude Include="AuthDataDao.h" />
     <ClInclude Include="AuthenticationData.h" />
     <ClInclude Include="CardDao.h" />
+    <ClInclude Include="CreditCard.h" />
     <ClInclude Include="DBController.h" />
+    <ClInclude Include="DebitCard.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />
     <ClInclude Include="UserData.h" />

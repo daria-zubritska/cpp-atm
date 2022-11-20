@@ -3,6 +3,7 @@
 #include <iostream>
 #include "sqlite\sqlite3.h"
 #include "DBController.h"
+#include "Transaction.h"
 
 using namespace std;
 
@@ -14,12 +15,12 @@ private:
 
 public:
 
+	Transaction instance(const string& fromCard, const string& toCard, const long double& sum, const string& dateTime);
+
 	TransactionDao(DBController*);
 
 	~TransactionDao();
 
-	/*
-	методи обробки запитів
-	*/
+	Transaction getById(int id);
 
 };

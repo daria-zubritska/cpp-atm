@@ -3,6 +3,7 @@
 #include <iostream>
 #include "sqlite\sqlite3.h"
 #include "DBController.h"
+#include "AuthenticationData.h"
 
 using namespace std;
 
@@ -13,6 +14,8 @@ private:
 	DBController* _db;
 
 public:
+
+	AuthenticationData instance(const string& phone, const string& password);
 
 	AuthDataDao(DBController*);
 

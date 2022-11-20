@@ -22,4 +22,8 @@ public:
 
 	~DBController();
 
+	sqlite3* const db() const {
+		return _DB;
+	}
+
 };
