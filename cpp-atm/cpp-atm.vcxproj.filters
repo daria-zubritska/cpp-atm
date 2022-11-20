@@ -19,6 +19,9 @@
     <Filter Include="Resource Files\DBControllerImpl">
       <UniqueIdentifier>{8401b0d9-1665-4119-9337-09eee44da213}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Account">
+      <UniqueIdentifier>{731e224b-dbae-40d1-b728-079579b8b2db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -55,6 +58,18 @@
     </ClInclude>
     <ClInclude Include="CardDao.h">
       <Filter>Header Files\DBController</Filter>
+    </ClInclude>
+    <ClInclude Include="Account.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthenticationData.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="Transaction.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="UserData.h">
+      <Filter>Header Files\Account</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
