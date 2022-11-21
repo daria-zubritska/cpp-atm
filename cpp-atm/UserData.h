@@ -13,14 +13,18 @@ private:
     vector<Transaction> userTransactions;
 
 public:
-    UserData();
+    UserData() {};
 
-    UserData(vector<Card>& userCards, vector<Transaction>& userTransactions);
+    UserData(vector<Card>& userCards, vector<Transaction>& userTransactions) :
+        userCards{ userCards }, userTransactions{ userTransactions }
+    {};
 
-    UserData(const UserData& toCopy);
+    UserData(const UserData& toCopy) :
+        userCards{ toCopy.getCards()}, userTransactions{ toCopy.getTransactions()}
+    {};
 
     ~UserData() {};
 
-    vector<Card> getCards() { return userCards; }
-    vector<Transaction> getTransactions() { return userTransactions; }
+    vector<Card> getCards() const { return userCards; };
+    vector<Transaction> getTransactions() const { return userTransactions; };
 };

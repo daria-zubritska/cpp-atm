@@ -12,14 +12,18 @@ private:
     string password;
 
 public:
-    AuthenticationData();
+    AuthenticationData() {};
 
-    AuthenticationData(const string& phone, const string& password);
+    AuthenticationData(const string& phone, const string& password) :
+        phone{ phone }, password{ password }
+    {};
 
-    AuthenticationData(const AuthenticationData& toCopy);
+    AuthenticationData(const AuthenticationData& toCopy) :
+        phone{ toCopy.getPhone() }, password{ toCopy.getPassword() }
+    {};
 
     ~AuthenticationData() {};
 
-    string getFrom() { return phone; }
-    string getTo() { return password; }
+    string getPhone() const { return phone; };
+    string getPassword() const { return password; };
 };

@@ -16,12 +16,18 @@ private:
 	bool isActive;
 
 public:
-	Card();
+	Card() : cvv{ 0 }, balance{ 0.0 }, isActive{ false } {};
 
-	Card(const string& number, const string& pin, const string& endDate, const int& cvv, 
-		const long double& balance, const string& currency, const bool& isActive);
+	Card(const string& number, const string& pin, const string& endDate, const int& cvv,
+		const long double& balance, const string& currency, const bool& isActive) :
+		number{ number }, pin{ pin }, endDate{ endDate }, cvv{ cvv }, balance{ balance }, currency{ currency },
+		isActive{ isActive }
+	{};
 
-	Card(const Card& toCopy);
+	Card(const Card& toCopy) :
+		number{ toCopy.getNumber() }, pin{ toCopy.getPin() }, endDate{ toCopy.getEndDate() }, cvv{ toCopy.getCvv()}, 
+		balance{ toCopy.getBalance() }, currency{ toCopy.getCurrency()}, isActive{ toCopy.getIsActive() }
+	{};
 
 	~Card() {};
 
