@@ -1,11 +1,15 @@
 ﻿#include <iostream>
 #include "DBController.h"
 #include "AuthDataDao.h"
-
+#include "CardDao.h"
 
 int main()
 {
+    //мануальне видалення не забувати)
     DBController* db = new DBController();
-    //видалення об'єкту відбувається у деструкторі дао
-    AuthDataDao d = AuthDataDao(db);
+    
+    CardDao d = CardDao(db);
+    TransactionDao t = TransactionDao(db);
+
+    delete db;
 }

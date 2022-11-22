@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <iostream>
-#include "sqlite\sqlite3.h"
+#include "sqlite/sqlite3.h"
 #include "DBController.h"
 #include "Transaction.h"
 
@@ -13,14 +13,16 @@ private:
 
 	DBController* _db;
 
-public:
-
 	Transaction instance(const string& fromCard, const string& toCard, const long double& sum, const string& dateTime);
+
+public:
 
 	TransactionDao(DBController*);
 
 	~TransactionDao();
 
 	Transaction getById(int id);
+
+	double getBalance(const string& number);
 
 };

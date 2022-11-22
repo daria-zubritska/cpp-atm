@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <iostream>
-#include "sqlite\sqlite3.h"
+#include "sqlite/sqlite3.h"
 #include "DBController.h"
 #include "AuthenticationData.h"
 
@@ -13,16 +13,14 @@ private:
 
 	DBController* _db;
 
-public:
-
 	AuthenticationData instance(const string& phone, const string& password);
+
+public:	
 
 	AuthDataDao(DBController*);
 
 	~AuthDataDao();
 
-	/*
-	методи обробки запитів
-	*/
+	AuthenticationData getByPhone(const string& phone);
 
 };

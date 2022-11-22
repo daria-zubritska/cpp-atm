@@ -1,6 +1,5 @@
 #pragma once
-#include<string>;
-#include "sqlite/sqlite3.c"
+#include <string>;
 using namespace std;
 
 class AuthenticationData
