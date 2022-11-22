@@ -71,10 +71,11 @@
     <ClInclude Include="UserData.h">
       <Filter>Header Files\Account</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="init.txt">
-      <Filter>Source Files</Filter>
-    </None>
+    <ClInclude Include="CreditCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DebitCard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp-atm", "cpp-atm\cpp-atm.vcxproj", "{E0CF0F03-39B0-44FD-B4BA-F15029F60583}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pdcurses", "cpp-atm\pdcurses\pdcurses.vcxproj", "{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,18 @@ Global
 		{E0CF0F03-39B0-44FD-B4BA-F15029F60583}.Release|x64.Build.0 = Release|x64
 		{E0CF0F03-39B0-44FD-B4BA-F15029F60583}.Release|x86.ActiveCfg = Release|Win32
 		{E0CF0F03-39B0-44FD-B4BA-F15029F60583}.Release|x86.Build.0 = Release|Win32
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|Any CPU.Build.0 = Debug|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|x64.ActiveCfg = Debug|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|x64.Build.0 = Debug|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|x86.ActiveCfg = Debug|Win32
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Debug|x86.Build.0 = Debug|Win32
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|Any CPU.ActiveCfg = Release|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|Any CPU.Build.0 = Release|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|x64.ActiveCfg = Release|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|x64.Build.0 = Release|x64
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|x86.ActiveCfg = Release|Win32
+		{6CD5F0F4-87DC-4C5A-B08F-3D730763A9D9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
