@@ -21,8 +21,8 @@ public:
 
 	~TransactionDao();
 
+	//NULL where number should be - means the money are from or going to the "real world"
 	Transaction getById(int id);
 
 	double getBalance(const string& number);
-
 };

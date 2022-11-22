@@ -24,6 +24,8 @@ void DBController::init()
 			exit = sqlite3_exec(_DB, tp.data(), NULL, 0, &messaggeError);
 
 			if (exit != SQLITE_OK) {
+				cout << tp << endl;
+
 				cerr << "Error Initiating Database" << endl;
 				sqlite3_free(messaggeError);
 			}
