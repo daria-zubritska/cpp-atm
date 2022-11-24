@@ -22,12 +22,12 @@
     <Filter Include="Header Files\Account">
       <UniqueIdentifier>{731e224b-dbae-40d1-b728-079579b8b2db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{b2ed057e-f097-4621-b230-758f103f83f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="sqlite\shell.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="sqlite\sqlite3.c">
@@ -44,6 +44,18 @@
     </ClCompile>
     <ClCompile Include="CardDao.cpp">
       <Filter>Resource Files\DBControllerImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UIModels.h">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UIModels.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="DebitCard.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleUtils.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

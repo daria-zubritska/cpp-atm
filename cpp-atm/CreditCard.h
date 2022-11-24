@@ -1,6 +1,6 @@
 #pragma once
-#include <string>;
-#include "Card.h";
+#include <string>
+#include "Card.h"
 using namespace std;
 
 class CreditCard : public Card
