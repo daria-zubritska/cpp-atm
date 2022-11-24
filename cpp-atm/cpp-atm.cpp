@@ -1,10 +1,13 @@
-﻿#include <iostream>
+﻿#pragma once
+#include <iostream>
 #include "DBController.h"
 #include "AuthDataDao.h"
 #include "CardDao.h"
 #include <windows.h>
 #include "ConsoleUtils.h"
 #include "UIModels.h"
+#include "Screen.h"
+
 void setup()
 {
     SetConsoleCP(CP_UTF8);
@@ -17,7 +20,9 @@ void setup()
 int main()
 {
     setup();
-    cout << UIModels::terminalScreen.symbols;
+    Screen screen{ UIModels::terminalScreen };
+    screen.excecute();
+    //cout << UIModels::terminalScreen.symbols;
     //мануальне видалення не забувати)
     /*DBController* db = new DBController();
     

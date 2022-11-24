@@ -25,6 +25,9 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{b2ed057e-f097-4621-b230-758f103f83f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI\Controls">
+      <UniqueIdentifier>{f85f90ae-bc1d-4ddb-a7de-23d25b1cbf23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -54,8 +57,11 @@
     <ClCompile Include="UIModels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Control.h">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.h">
+      <Filter>Header Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="ConsoleUtils.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Screen.h">
+      <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
 #include <Windows.h>
+#include <conio.h>
+#pragma once
 class ConsoleUtils
 {
 public:
@@ -6,4 +8,7 @@ public:
 	static int width;
 	static void resize(RECT rect);
 	static void setCursorPosition(int x, int y);
+
+	static SHORT GetKey();
+	static void ClearScreen();
 };
