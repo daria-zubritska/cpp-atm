@@ -14,7 +14,7 @@ public:
 		//{c1x,l1y} {c2x,l1y}
 		//{c1x,l2y} {c2x,l2y}
 		//{c1x,l3y} {c2x,l3y}
-		int c1x{ 2 },c2x{120},l1y{13},l2y{20},l3y{28};
+		int c1x{ 2 },c2x{120},l1y{14},l2y{21},l3y{28};
 		std::cout << model.symbols;
 		switch (pos)
 		{
@@ -72,7 +72,6 @@ public:
 	}
 
 private:
-
 	void fillButton(char symbol, int xpos, int ypos, bool right)
 	{
 		int length;
@@ -117,6 +116,4 @@ private:
 			break;
 		}
 	}
-	
-
 };
