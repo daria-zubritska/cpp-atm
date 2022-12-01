@@ -110,5 +110,8 @@
     <ClInclude Include="Screen.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
+    <ClInclude Include="PinInput.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
