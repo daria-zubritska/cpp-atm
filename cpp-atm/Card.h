@@ -39,7 +39,23 @@ public:
 	string getCurrency() const { return currency; };
 	bool getIsActive() const { return isActive; };
 
+	void setNumber(string newNumber) { number = newNumber; };
 	void setPin(string newPin) { pin = newPin; };
-	void setSum(int newBalance) { balance = newBalance; };
+	void setEndDate(string newEndDate) { endDate = newEndDate; };
+	void setCvv(int newCvv) { cvv = newCvv; };
+	void setBalance(long double newBalance) { balance = newBalance; };
+	void setCurrency(string newCurrency) { currency = newCurrency; };
 	void setIsActive(bool newIsActive) { isActive = newIsActive; };
+
+	string GetCard()
+	{
+		string cardInfo;
+
+		/*transactionInfo += "Sender: " + fromCard + "\n";
+		transactionInfo += "Receiver: " + toCard + "\n";
+		transactionInfo += "Sum: " + to_string(sum) + "\n";
+		transactionInfo += "Time: " + time;*/
+
+		return cardInfo;
+	}
 };

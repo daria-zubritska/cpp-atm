@@ -1,6 +1,6 @@
 #pragma once
-#include"UserData.h";
-#include"AuthenticationData.h";
+#include"UserData.h"
+#include"AuthenticationData.h"
 
 class Account
 {

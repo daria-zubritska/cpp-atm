@@ -29,5 +29,16 @@ public:
     long double getSum() const { return sum; };
     string getDatetime() const { return time; };
 
+    string getTransaction() 
+    {
+        string transactionInfo;
+
+        transactionInfo += "Sender: " + fromCard + "\n";
+        transactionInfo += "Receiver: " + toCard + "\n";
+        transactionInfo += "Sum: " + to_string(sum) + "\n";
+        transactionInfo += "Time: " + time;
+
+        return transactionInfo;
+    }
 
 };

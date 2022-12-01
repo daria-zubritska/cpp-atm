@@ -1,7 +1,7 @@
 #pragma once
-#include"Card.h";
-#include"Transaction.h";
-#include<vector>;
+#include"Card.h"
+#include"Transaction.h"
+#include<vector>
 #include "sqlite/sqlite3.c"
 using namespace std;
 
