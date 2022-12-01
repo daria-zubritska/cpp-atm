@@ -14,7 +14,7 @@ public:
 	void update(int pos);
 
 	Screen(Model model);
-	std::string excecute(std::vector<std::function<std::string(void)>> uiFunctions, std::vector < std::function<void(void)>> functions);
+	std::string excecute(std::vector < std::function<std::string(void)>> uiFunctions, std::vector < std::function<void(std::string)>> functions);
 
 private:
 	void fillButton(char symbol, int xpos, int ypos, bool right);
