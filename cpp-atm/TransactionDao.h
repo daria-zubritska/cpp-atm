@@ -4,6 +4,7 @@
 #include "sqlite/sqlite3.h"
 #include "DBController.h"
 #include "Transaction.h"
+#include <list>
 
 using namespace std;
 
@@ -22,7 +23,11 @@ public:
 	~TransactionDao();
 
 	//NULL where number should be - means the money are from or going to the "real world"
-	Transaction getById(int id);
+	Transaction getById(int);
 
-	double getBalance(const string& number);
+	double getBalance(const string&);
+
+	list<Transaction> getAllByCard(const string&);
+
+	bool insertTrans(Transaction&);
 };

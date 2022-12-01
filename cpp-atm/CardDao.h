@@ -8,6 +8,7 @@
 #include "DebitCard.h"
 #include "TransactionDao.h"
 #include "Transaction.h"
+#include <list>
 
 using namespace std;
 
@@ -32,4 +33,7 @@ public:
 	//if both return empty objects then card doesn`t exist
 	CreditCard getByNumberC(const string&, TransactionDao);
 	DebitCard getByNumberD(const string&, TransactionDao);
+
+	list<CreditCard> getAllByUserC(const string&, TransactionDao);
+	list<DebitCard> getAllByUserD(const string&, TransactionDao);
 };
