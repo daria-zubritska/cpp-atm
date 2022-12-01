@@ -1,12 +1,12 @@
 ﻿#pragma once
 #include <iostream>
+#include "Screen.h"
 #include "DBController.h"
 #include "AuthDataDao.h"
 #include "CardDao.h"
 #include <windows.h>
 #include "ConsoleUtils.h"
 #include "UIModels.h"
-#include "Screen.h"
 
 void setup()
 {
@@ -20,7 +20,7 @@ void setup()
 int main()
 {
     setup();
-    Screen screen{ UIModels::terminalScreen };
+    Screen screen{UIModels::terminalScreen};
     screen.excecute();
     //cout << UIModels::terminalScreen.symbols;
     //мануальне видалення не забувати)

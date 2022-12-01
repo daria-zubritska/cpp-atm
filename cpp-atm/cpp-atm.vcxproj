@@ -153,6 +153,7 @@
     <ClCompile Include="CardDao.cpp" />
     <ClCompile Include="DBController.cpp" />
     <ClCompile Include="Model.h" />
+    <ClCompile Include="Screen.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
     <ClCompile Include="UIModels.cpp" />

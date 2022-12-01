@@ -28,6 +28,12 @@
     <Filter Include="Header Files\UI\Controls">
       <UniqueIdentifier>{f85f90ae-bc1d-4ddb-a7de-23d25b1cbf23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\UI">
+      <UniqueIdentifier>{8e442229-4148-45ee-aadb-7523d1a65a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\UI\Controls">
+      <UniqueIdentifier>{39d112af-faf7-43cb-8b00-25a450429a23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -62,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="Model.h">
       <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Screen.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
