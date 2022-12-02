@@ -28,8 +28,8 @@ Transaction TransactionDao::getById(int id)
 
 	if (sqlite3_step(stmt) != SQLITE_DONE) {
 
-		return instance(reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
+		return instance(sqlite3_column_text(stmt, 1) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)) : "",
+			sqlite3_column_text(stmt, 2) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)) : "",
 			sqlite3_column_double(stmt, 3),
 			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4)));
 	}
@@ -73,8 +73,8 @@ list<Transaction> TransactionDao::getAllByCard(const string& number)
 	while (sqlite3_step(stmt) != SQLITE_DONE) {
 
 		newList.push_back(instance(
-			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
+			sqlite3_column_text(stmt, 1) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)) : "",
+			sqlite3_column_text(stmt, 2) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)) : "",
 			sqlite3_column_double(stmt, 3),
 			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4))));
 	}
@@ -85,8 +85,8 @@ list<Transaction> TransactionDao::getAllByCard(const string& number)
 	while (sqlite3_step(stmt) != SQLITE_DONE) {
 
 		newList.push_back(instance(
-			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)),
-			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)),
+			sqlite3_column_text(stmt, 1) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 1)) : "",
+			sqlite3_column_text(stmt, 2) != NULL ? reinterpret_cast<const char*>(sqlite3_column_text(stmt, 2)) : "",
 			sqlite3_column_double(stmt, 3),
 			reinterpret_cast<const char*>(sqlite3_column_text(stmt, 4))));
 	}
