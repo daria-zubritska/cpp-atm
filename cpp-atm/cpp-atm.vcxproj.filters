@@ -72,6 +72,12 @@
     <ClCompile Include="Screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PinInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CardNumberInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
@@ -111,6 +117,9 @@
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
     <ClInclude Include="PinInput.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="CardNumberInput.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
   </ItemGroup>

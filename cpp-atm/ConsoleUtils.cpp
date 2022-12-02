@@ -1,4 +1,5 @@
 #include "ConsoleUtils.h"
+#include <iostream>
 #pragma once
 
 int ConsoleUtils::height;
@@ -22,6 +23,7 @@ void ConsoleUtils::setCursorPosition(int x, int y)
 
 SHORT ConsoleUtils::GetKey() 
 {
+	//lol what is this? 
 	keybd_event(VK_RETURN, 0, KEYEVENTF_KEYUP, 0);
 	int a;
 	while (TRUE)
@@ -43,11 +45,24 @@ SHORT ConsoleUtils::GetKey()
 				return VK_LEFT;
 			}
 			break;
+		case 8:
+			return VK_BACK;
 		case 27:
 			return VK_ESCAPE;
 		case 13:
 			return VK_RETURN;
+		default:
+			return a;
 		}
+	}
+}
+
+void ConsoleUtils::drawAt(int x, int y, std::vector<std::string> rows)
+{
+	for (int i = 0; i < rows.size(); ++i)
+	{
+		ConsoleUtils::setCursorPosition(x, y + i);
+		std::cout << rows[i];
 	}
 }
 

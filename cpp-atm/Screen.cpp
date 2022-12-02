@@ -55,7 +55,13 @@ std::string Screen::excecute(std::vector < std::function<std::string(void)>> uiF
 			functions[cursor](uiFunctions[cursor]());
 		}
 		else
+		{
 			buff = cursorChange(cursor, key);
+			if (key >= 48 && key <= 57)
+			{
+				//some crap...
+			}
+		}
 		if (buff != cursor)
 		{
 			cursor = buff;

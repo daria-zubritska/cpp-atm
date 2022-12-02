@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include <conio.h>
+#include <string>
+#include <vector>
 #pragma once
 class ConsoleUtils
 {
@@ -8,6 +10,8 @@ public:
 	static int width;
 	static void resize(RECT rect);
 	static void setCursorPosition(int x, int y);
+
+	static void drawAt(int x, int y, std::vector<std::string> rows);
 
 	static SHORT GetKey();
 	static void ClearScreen();

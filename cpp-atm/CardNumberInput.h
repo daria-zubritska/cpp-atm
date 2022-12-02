@@ -3,14 +3,14 @@
 #include <iostream>
 #pragma once
 
-class PinInput
+class CardNumberInput
 {
 private:
 	Model model;
 	int xpos, ypos;
 public:
-	
-	PinInput(Model model, int xpos, int ypos);
+
+	CardNumberInput(Model model, int xpos, int ypos);
 
 	std::string excecute();
 

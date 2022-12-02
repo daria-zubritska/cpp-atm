@@ -147,12 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AuthDataDao.cpp" />
+    <ClCompile Include="CardNumberInput.cpp" />
     <ClCompile Include="ConsoleUtils.cpp" />
     <ClCompile Include="Control.h" />
     <ClCompile Include="cpp-atm.cpp" />
     <ClCompile Include="CardDao.cpp" />
     <ClCompile Include="DBController.cpp" />
     <ClCompile Include="Model.h" />
+    <ClCompile Include="PinInput.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
@@ -164,6 +166,7 @@
     <ClInclude Include="AuthDataDao.h" />
     <ClInclude Include="AuthenticationData.h" />
     <ClInclude Include="CardDao.h" />
+    <ClInclude Include="CardNumberInput.h" />
     <ClInclude Include="ConsoleUtils.h" />
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="DBController.h" />

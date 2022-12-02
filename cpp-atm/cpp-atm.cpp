@@ -7,7 +7,8 @@
 #include <windows.h>
 #include "ConsoleUtils.h"
 #include "UIModels.h"
-
+#include "PinInput.h"
+#include "CardNumberInput.h"
 void setup()
 {
     SetConsoleCP(CP_UTF8);
@@ -19,9 +20,21 @@ void setup()
 
 int main()
 {
+    /*while (true)
+    {
+        cout << _getch();
+    }*/
+
+    
     setup();
-    Screen screen{UIModels::terminalScreen};
-    screen.excecute();
+    CardNumberInput a(UIModels::cardNumberInput, 10, 10);
+    cout << std::endl << a.excecute();
+    system("pause");
+    ConsoleUtils::ClearScreen();
+    PinInput input{UIModels::pinInput, 10,10};
+    cout << std::endl << input.excecute();
+    /*Screen screen{UIModels::terminalScreen};
+    screen.excecute();*/
     //cout << UIModels::terminalScreen.symbols;
     //мануальне видалення не забувати)
     /*DBController* db = new DBController();
