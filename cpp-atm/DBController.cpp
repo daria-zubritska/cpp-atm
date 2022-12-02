@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -6,6 +7,28 @@
 #include "DBController.h"
 
 using namespace std;
+
+DBController* DBController::controller = nullptr;
+
+void DBController::create()
+{
+	if (controller == nullptr)
+	{
+		controller = new DBController();
+		controller->init();
+	}
+}
+
+void DBController::dispose()
+{
+	delete(controller);
+	controller = NULL;
+}
+DBController* DBController::getController()
+{
+	return controller;
+}
+
 
 void DBController::init()
 {
@@ -32,6 +55,9 @@ void DBController::init()
 		}
 		newfile.close(); //close the file object.
 	}
+
+
+
 }
 
 DBController::DBController() {

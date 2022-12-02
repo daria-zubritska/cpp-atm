@@ -24,10 +24,9 @@ void setup()
 //method for testing
 void tests() {
 	//мануальне видалення не забувати)
-	DBController* db = new DBController();
-
+	DBController::create();
 	cout << "\nTransactionDaoTest" << endl;
-	TransactionDao tdao = TransactionDao(db);
+	TransactionDao tdao = TransactionDao(DBController::getController());
 	Transaction t = tdao.getById(1);
 
 	cout << "Is from correct: " << (t.getFrom() == "") << endl;
@@ -37,14 +36,14 @@ void tests() {
 
 	cout << "\nAuthDataDaoTest" << endl;
 
-	AuthDataDao adao = AuthDataDao(db);
+	AuthDataDao adao = AuthDataDao(DBController::getController());
 	AuthenticationData a = adao.getByPhone("1231231234");
 
 	cout << "Is phone correct: " << (a.getPhone() == "1231231234") << endl;
 	cout << "Is password correct: " << (a.getPassword() == "pass with salt") << endl;
 
 	cout << "\nCardDaoTest" << endl;
-	CardDao cdao = CardDao(db);
+	CardDao cdao = CardDao(DBController::getController());
 	CreditCard cc = cdao.getByNumberC("0000 0000 0000 0001", tdao);
 	DebitCard dc = cdao.getByNumberD("0000 0000 0000 0000", tdao);
 
@@ -63,7 +62,7 @@ void tests() {
 	cout << "Is currency correct: " << (dc.getCurrency() == "UAH") << endl;
 	cout << "Is active correct: " << (dc.getIsActive() == 1) << endl;
 
-	delete db;
+	DBController::dispose();
 }
 
 int main()
