@@ -10,22 +10,19 @@ using namespace std;
 
 DBController* DBController::controller = nullptr;
 
-void DBController::create()
+void DBController::dispose()
+{
+	delete(controller);
+	controller = NULL;
+}
+
+DBController* DBController::getController()
 {
 	if (controller == nullptr)
 	{
 		controller = new DBController();
 		controller->init();
 	}
-}
-
-void DBController::dispose()
-{
-	delete(controller);
-	controller = NULL;
-}
-DBController* DBController::getController()
-{
 	return controller;
 }
 

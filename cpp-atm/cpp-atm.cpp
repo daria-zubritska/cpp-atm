@@ -23,8 +23,7 @@ void setup()
 
 //method for testing
 void tests() {
-	//мануальне видалення не забувати)
-	DBController::create();
+	
 	cout << "\nTransactionDaoTest" << endl;
 	TransactionDao tdao = TransactionDao(DBController::getController());
 	Transaction t = tdao.getById(1);
@@ -62,6 +61,7 @@ void tests() {
 	cout << "Is currency correct: " << (dc.getCurrency() == "UAH") << endl;
 	cout << "Is active correct: " << (dc.getIsActive() == 1) << endl;
 
+	//мануальне видалення не забувати)
 	DBController::dispose();
 }
 

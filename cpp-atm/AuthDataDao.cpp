@@ -21,7 +21,7 @@ AuthDataDao::~AuthDataDao() {
 AuthenticationData AuthDataDao::getByPhone(const string& phone)
 {
 	sqlite3_stmt* stmt;
-
+	
 	sqlite3_prepare_v2(_db->db(), "SELECT * FROM auth_data WHERE phone = ?;", -1, &stmt, NULL);
 	sqlite3_bind_text(stmt, 1, phone.c_str(), -1, SQLITE_STATIC);
 
