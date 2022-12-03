@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <iostream>
-#include "Screen.h"
+#include "Screen.cpp"
 
 #include "Screen.cpp"
 #include "DBController.h"
@@ -90,9 +90,9 @@ int main()
 	//cout << UIModels::terminalScreen.symbols;
 	
     setup();
-    Screen screen{ 50,20 };
+    /*Screen screen{50,20};
     for (int i = 0; i < 50; i++)
-        cout << "0";
+        cout << "0";*/
     /*CardNumberInput a(UIModels::cardNumberInput, 10, 10);
     cout << std::endl << a.excecute();
     system("pause");
@@ -103,15 +103,7 @@ int main()
     screen.excecute();*/
     //cout << UIModels::terminalScreen.symbols;
     //мануальне видалення не забувати)
-    /*DBController* db = new DBController();
-    
-    CardDao d = CardDao(db);
-    TransactionDao t = TransactionDao(db);
-    string s("0000 0000 0000 0001");
-    string s1("0000 0000 0000 0000");
-
-    cout << d.getByNumberC(s, t).getBalance() << endl;
-    cout << d.getByNumberD(s1, t).getBalance() << endl;
+ 
 
 	tests();
 }
