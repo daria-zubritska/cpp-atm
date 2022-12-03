@@ -1,7 +1,7 @@
+#pragma once
 #include <vector>
 #include <string>
 #include <Windows.h>
-#pragma once
 struct Model
 {
 public:

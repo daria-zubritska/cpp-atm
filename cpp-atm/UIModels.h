@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 #include <string>
 #include "Model.h"
@@ -9,6 +10,7 @@ public:
 	static Model terminalFar;
 	static Model pinInput;
 	static Model cardNumberInput;
+	static Model sumInput;
 	static std::vector<std::string> letters;
 
 public:

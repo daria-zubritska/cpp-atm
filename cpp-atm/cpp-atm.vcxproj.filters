@@ -28,11 +28,8 @@
     <Filter Include="Header Files\UI\Controls">
       <UniqueIdentifier>{f85f90ae-bc1d-4ddb-a7de-23d25b1cbf23}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\UI">
-      <UniqueIdentifier>{8e442229-4148-45ee-aadb-7523d1a65a5d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\UI\Controls">
-      <UniqueIdentifier>{39d112af-faf7-43cb-8b00-25a450429a23}</UniqueIdentifier>
+    <Filter Include="Header Files\UI\Screens">
+      <UniqueIdentifier>{f2edf288-905b-45ce-aaac-42fcb2b6e7e6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,14 +66,14 @@
     <ClCompile Include="Model.h">
       <Filter>Header Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Screen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PinInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CardNumberInput.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginScreen.cpp">
+      <Filter>Header Files\UI\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +110,7 @@
     <ClInclude Include="ConsoleUtils.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
+    <ClInclude Include="Screen.cpp">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
     <ClInclude Include="PinInput.h">
@@ -121,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="CardNumberInput.h">
       <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

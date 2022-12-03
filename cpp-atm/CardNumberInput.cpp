@@ -33,7 +33,7 @@ std::string CardNumberInput::excecute()
 
 		if (key == VK_ESCAPE)
 		{
-			//escape???
+			return "";
 		}
 
 		if (key == VK_BACK && buf.length() != 0)
@@ -42,12 +42,9 @@ std::string CardNumberInput::excecute()
 				ConsoleUtils::setCursorPosition(xpos + 1 + (buf.size()) + buf.size() / 4 * 3-3, ypos + 1);
 			else
 				ConsoleUtils::setCursorPosition(xpos + 1 + (buf.size()) + buf.size() / 4 * 3, ypos + 1);
-			/*else
-				ConsoleUtils::setCursorPosition(xpos + 1 + (buf.size()) + buf.size() / 4 * 3 + 1, ypos + 1);*/
 			buf.resize(buf.size() - 1);
 			std::cout << " ";
 			ConsoleUtils::setCursorPosition(xpos + 1 + (buf.size()) + buf.size() / 4 * 3 +1 , ypos + 1);
-			//ConsoleUtils::setCursorPosition(xpos + 1 + (buf.size()), ypos + 1);
 		}
 	}
 	return buf;
