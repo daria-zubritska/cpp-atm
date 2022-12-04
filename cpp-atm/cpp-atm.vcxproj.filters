@@ -16,6 +16,9 @@
     <Filter Include="Header Files\DBController">
       <UniqueIdentifier>{a0ab13b2-fb24-42b6-839e-796378759388}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\DBControllerImpl">
+      <UniqueIdentifier>{8401b0d9-1665-4119-9337-09eee44da213}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Header Files\Account">
       <UniqueIdentifier>{731e224b-dbae-40d1-b728-079579b8b2db}</UniqueIdentifier>
     </Filter>
@@ -43,12 +46,6 @@
     <Filter Include="Source Files\UI\Controls\Screens">
       <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DBControllerImpl">
-      <UniqueIdentifier>{8401b0d9-1665-4119-9337-09eee44da213}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Account">
-      <UniqueIdentifier>{575c50f3-1ed7-449b-b28d-0784c880a2a7}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -58,16 +55,16 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DBController.cpp">
-      <Filter>Source Files\DBControllerImpl</Filter>
+      <Filter>Resource Files\DBControllerImpl</Filter>
     </ClCompile>
     <ClCompile Include="AuthDataDao.cpp">
-      <Filter>Source Files\DBControllerImpl</Filter>
+      <Filter>Resource Files\DBControllerImpl</Filter>
     </ClCompile>
     <ClCompile Include="TransactionDao.cpp">
-      <Filter>Source Files\DBControllerImpl</Filter>
+      <Filter>Resource Files\DBControllerImpl</Filter>
     </ClCompile>
     <ClCompile Include="CardDao.cpp">
-      <Filter>Source Files\DBControllerImpl</Filter>
+      <Filter>Resource Files\DBControllerImpl</Filter>
     </ClCompile>
     <ClCompile Include="ConsoleUtils.cpp">
       <Filter>Source Files</Filter>
@@ -101,9 +98,6 @@
     </ClCompile>
     <ClCompile Include="Label.cpp">
       <Filter>Source Files\UI\Controls</Filter>
-    </ClCompile>
-    <ClCompile Include="Card.cpp">
-      <Filter>Source Files\Account</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,9 +151,6 @@
     </ClInclude>
     <ClInclude Include="Label.h">
       <Filter>Header Files\UI\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="Card.h">
-      <Filter>Header Files\Account</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

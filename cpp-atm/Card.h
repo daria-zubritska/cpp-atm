@@ -47,7 +47,15 @@ public:
 	void setCurrency(string newCurrency) { currency = newCurrency; };
 	void setIsActive(bool newIsActive) { isActive = newIsActive; };
 
-	string GetCard();
+	string GetCard()
+	{
+		string cardInfo;
 
-	void DonateOnZSU(const long double& sum);
+		/*transactionInfo += "Sender: " + fromCard + "\n";
+		transactionInfo += "Receiver: " + toCard + "\n";
+		transactionInfo += "Sum: " + to_string(sum) + "\n";
+		transactionInfo += "Time: " + time;*/
+
+		return cardInfo;
+	}
 };

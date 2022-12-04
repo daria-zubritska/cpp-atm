@@ -4,6 +4,6 @@ DROP TABLE IF EXISTS auth_data;
 CREATE TABLE auth_data(phone TEXT PRIMARY KEY NOT NULL, pass TEXT NOT NULL);
 CREATE TABLE card(number TEXT PRIMARY KEY NOT NULL, pin TEXT NOT NULL, end_date TEXT NOT NULL,cvv INTEGER NOT NULL,currency TEXT NOT NULL,active INTEGER NOT NULL,cred_limit REAL,owner TEXT NOT NULL,FOREIGN KEY(owner) REFERENCES auth_data(phone));
 CREATE TABLE transactions(id INTEGER PRIMARY KEY AUTOINCREMENT,card_from TEXT,card_to TEXT,sum_change REAL NOT NULL,date_time TEXT NOT NULL,FOREIGN KEY(card_from) REFERENCES card(number),FOREIGN KEY(card_to) REFERENCES card(number));
-INSERT INTO auth_data(phone, pass) VALUES("1231231234", "564"),("0980980987", "594");
+INSERT INTO auth_data(phone, pass) VALUES("1231231234", "pass with salt"),("0980980987", "pass with salt2");
 INSERT INTO card(number, pin, end_date, cvv, currency, active, cred_limit, owner) VALUES("0000 0000 0000 0000", "1111", "10/24", 111, "UAH", 1, NULL, "1231231234"),("0000 0000 0000 0001", "1112", "10/24", 222, "UAH", 1, 15000, "1231231234"),("1000 0000 0000 0000", "2221", "10/24", 333, "UAH", 0, NULL, "0980980987"),("1000 0000 0000 0001", "2222", "10/24", 444, "UAH", 0, 16000, "0980980987");
 INSERT INTO transactions(card_from, card_to, sum_change, date_time)VALUES(NULL, "0000 0000 0000 0000", 5000, "12/11/2022"),("0000 0000 0000 0000", NULL, 1000, "12/11/2022"),("0000 0000 0000 0000", "0000 0000 0000 0001", 2000, "13/11/2022");
