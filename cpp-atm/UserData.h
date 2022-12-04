@@ -27,4 +27,7 @@ public:
 
     vector<Card> getCards() const { return userCards; };
     vector<Transaction> getTransactions() const { return userTransactions; };
+
+    UserData getUserData(const string& phone);
+
 };
