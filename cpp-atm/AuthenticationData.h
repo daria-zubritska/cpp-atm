@@ -11,7 +11,6 @@ private:
     string password;
 
 public:
-
     AuthenticationData() {};
 
     AuthenticationData(const string& phone, const string& password) :
@@ -26,5 +25,4 @@ public:
 
     string getPhone() const { return phone; };
     string getPassword() const { return password; };
-
 };

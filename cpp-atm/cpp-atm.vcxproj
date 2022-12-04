@@ -146,7 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account.cpp" />
     <ClCompile Include="AuthDataDao.cpp" />
     <ClCompile Include="CardNumberInput.cpp" />
     <ClCompile Include="ConsoleUtils.cpp" />

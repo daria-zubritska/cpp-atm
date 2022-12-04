@@ -27,6 +27,4 @@ public:
     string getName() const { return name; };
     AuthenticationData getAuthenticationData() const { return authData; };
     UserData getUserData() const { return userData; };
-
-    bool checkAccount(const string& phone, const string& pass);
 };
