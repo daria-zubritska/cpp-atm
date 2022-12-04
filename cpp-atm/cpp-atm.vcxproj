@@ -153,6 +153,8 @@
     <ClCompile Include="cpp-atm.cpp" />
     <ClCompile Include="CardDao.cpp" />
     <ClCompile Include="DBController.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="LoginScreen.cpp" />
     <ClCompile Include="Model.h" />
     <ClCompile Include="PinInput.cpp" />
@@ -160,6 +162,7 @@
     <ClCompile Include="TransactionDao.cpp" />
     <ClCompile Include="UIModels.cpp" />
     <ClCompile Include="UIModels.h" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
@@ -171,12 +174,17 @@
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="DBController.h" />
     <ClInclude Include="DebitCard.h" />
+    <ClInclude Include="Label.h" />
+    <ClInclude Include="LoginScreen.h" />
     <ClInclude Include="PinInput.h" />
     <ClInclude Include="Screen.cpp" />
+    <ClInclude Include="Screen.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />
     <ClInclude Include="UserData.h" />
-    <ClInclude Include="Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Input.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

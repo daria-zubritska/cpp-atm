@@ -12,7 +12,8 @@ public:
 	static void setCursorPosition(int x, int y);
 
 	static void drawAt(int x, int y, std::vector<std::string> rows);
-
+	static void drawAt(int x, int y, std::string row);
+	static void drawAt(int x, int y, char symbol);
 	static SHORT GetKey();
 	static void ClearScreen();
 };

@@ -51,6 +51,8 @@ SHORT ConsoleUtils::GetKey()
 			return VK_ESCAPE;
 		case 13:
 			return VK_RETURN;
+		case 9:
+			return VK_TAB;
 		default:
 			return a;
 		}
@@ -64,6 +66,18 @@ void ConsoleUtils::drawAt(int x, int y, std::vector<std::string> rows)
 		ConsoleUtils::setCursorPosition(x, y + i);
 		std::cout << rows[i];
 	}
+}
+
+void ConsoleUtils::drawAt(int x, int y, std::string row)
+{
+	ConsoleUtils::setCursorPosition(x, y);
+	std::cout << row;
+}
+
+void ConsoleUtils::drawAt(int x, int y, char symbol)
+{
+	ConsoleUtils::setCursorPosition(x, y);
+	std::cout << symbol;
 }
 
 void ConsoleUtils::ClearScreen()
