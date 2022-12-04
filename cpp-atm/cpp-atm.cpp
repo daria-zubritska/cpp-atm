@@ -13,6 +13,11 @@
 #include <vector>
 #include "Window.cpp"
 #include "LoginScreen.h"
+
+AuthDataDao adao = AuthDataDao(DBController::getController());
+TransactionDao tdao = TransactionDao(DBController::getController());
+CardDao cdao = CardDao(DBController::getController());
+
 void setup()
 {
 	SetConsoleCP(CP_UTF8);
@@ -21,6 +26,33 @@ void setup()
 	ConsoleUtils::resize({ 200, 200, 1310, 880 });
 	UIModels::loadModels();
 }
+
+vector<Card> getAllCards(const string& phone)
+{
+
+	vector<Card> userCards;
+
+	list<CreditCard> clist = cdao.getAllByUserC(phone, tdao);
+
+	for (Card const& i : clist) {
+		userCards.push_back(i);
+	}
+
+	list<DebitCard> dlist = cdao.getAllByUserD(phone, tdao);
+
+	for (Card const& i : dlist) {
+		userCards.push_back(i);
+	}
+
+	return userCards;
+}
+
+bool checkAccount(const string& phone, const string& pass)
+{
+	AuthenticationData a = adao.getByPhone(phone);
+	return ((a.getPhone() == phone) && (a.getPassword() == pass));
+}
+
 
 //method for testing
 void tests() {
@@ -41,6 +73,7 @@ void tests() {
 
 	cout << "Is phone correct: " << (a.getPhone() == "1231231234") << endl;
 	cout << "Is password correct: " << (a.getPassword() == "pass with salt") << endl;
+	cout << "Is account correct: " << checkAccount("1231231234", "pass with salt") << endl;
 
 	cout << "\nCardDaoTest" << endl;
 	CardDao cdao = CardDao(DBController::getController());
@@ -69,10 +102,10 @@ void tests() {
 int main()
 {
 	
-    setup();
-	LoginScreen screen{ 120,40,1005 + 200,700 + 200 };
-	screen.draw();
-	screen.excecute();
+ //   setup();
+	//LoginScreen screen{ 120,40,1005 + 200,700 + 200 };
+	//screen.draw();
+	//screen.excecute();
 	
 
 
@@ -111,5 +144,5 @@ int main()
     //мануальне видалення не забувати)
  
 
-	//tests();
+	tests();
 }
