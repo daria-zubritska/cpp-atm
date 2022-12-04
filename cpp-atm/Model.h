@@ -17,7 +17,7 @@ public:
 		std::vector<std::string> out;
 		std::string buf = "";
 
-		for (int i = 0; i < symbols.length(); ++i)
+		for (int i = 1; i < symbols.length(); ++i)
 		{
 			
 			if(symbols[i] == '\n')

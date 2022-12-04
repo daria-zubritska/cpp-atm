@@ -3,7 +3,7 @@
 
 class Control
 {
-protected:
+private:
 	int xpos, ypos;
 	Model model;
 public:

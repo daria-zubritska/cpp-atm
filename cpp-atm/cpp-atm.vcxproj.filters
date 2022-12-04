@@ -31,21 +31,6 @@
     <Filter Include="Header Files\UI\Screens">
       <UniqueIdentifier>{f2edf288-905b-45ce-aaac-42fcb2b6e7e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI">
-      <UniqueIdentifier>{783fe493-fbeb-40dd-94c0-02d51a9fb0b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI\Controls">
-      <UniqueIdentifier>{3e46e127-ccf9-496f-b48a-0b3fb4fec394}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI\Controls\Inputs">
-      <UniqueIdentifier>{c1c641ba-204f-4598-8225-aed712c7d119}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\UI\Controls\Inputs">
-      <UniqueIdentifier>{0226cef7-026c-435e-bddf-81856d7d4442}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\UI\Controls\Screens">
-      <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -87,17 +72,8 @@
     <ClCompile Include="CardNumberInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>Source Files\UI\Controls\Inputs</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Header Files\UI\Controls</Filter>
-    </ClCompile>
     <ClCompile Include="LoginScreen.cpp">
-      <Filter>Source Files\UI\Controls\Screens</Filter>
-    </ClCompile>
-    <ClCompile Include="Label.cpp">
-      <Filter>Source Files\UI\Controls</Filter>
+      <Filter>Header Files\UI\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,28 +110,17 @@
     <ClInclude Include="ConsoleUtils.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
+    <ClInclude Include="Screen.cpp">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
     <ClInclude Include="PinInput.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
     <ClInclude Include="CardNumberInput.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="Screen.h">
-      <Filter>Header Files\UI\Screens</Filter>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="LoginScreen.h">
-      <Filter>Header Files\UI\Screens</Filter>
-    </ClInclude>
-    <ClInclude Include="Screen.cpp">
-      <Filter>Source Files\UI\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="Label.h">
-      <Filter>Header Files\UI\Controls</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Input.h">
-      <Filter>Header Files\UI\Controls\Inputs</Filter>
-    </None>
   </ItemGroup>
 </Project>
