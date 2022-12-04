@@ -11,7 +11,6 @@ PinInput::PinInput(Model model, int xpos, int ypos)
 std::string PinInput::excecute()
 {
 	std::string buf = "";
-	int* prev_size = new int{ 1 };
 	SHORT key{ 0 };
 
 	ConsoleUtils::drawAt(xpos, ypos, model.getRows());

@@ -11,6 +11,7 @@ public:
 	static Model pinInput;
 	static Model cardNumberInput;
 	static Model sumInput;
+	static Model windowModel;
 	static std::vector<std::string> letters;
 
 public:

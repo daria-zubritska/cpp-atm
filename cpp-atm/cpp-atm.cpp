@@ -1,8 +1,6 @@
 ﻿#pragma once
 #include <iostream>
-#include "Screen.cpp"
-
-#include "Screen.cpp"
+#include "Screen.h"
 #include "DBController.h"
 #include "AuthDataDao.h"
 #include "TransactionDao.h"
@@ -11,10 +9,10 @@
 #include <windows.h>
 #include "ConsoleUtils.h"
 #include "UIModels.h"
-#include "PinInput.h"
 #include "CardNumberInput.h"
 #include <vector>
-
+#include "Window.cpp"
+#include "LoginScreen.h"
 void setup()
 {
 	SetConsoleCP(CP_UTF8);
@@ -70,6 +68,15 @@ void tests() {
 
 int main()
 {
+	
+    setup();
+	LoginScreen screen{ 120,40,1005 + 200,700 + 200 };
+	screen.draw();
+	screen.excecute();
+	
+
+
+
 	/*while (true)
 	{
 		cout << _getch();
@@ -89,7 +96,6 @@ int main()
 
 	//cout << UIModels::terminalScreen.symbols;
 	
-    setup();
     /*Screen screen{50,20};
     for (int i = 0; i < 50; i++)
         cout << "0";*/
@@ -105,5 +111,5 @@ int main()
     //мануальне видалення не забувати)
  
 
-	tests();
+	//tests();
 }
