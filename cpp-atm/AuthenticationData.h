@@ -1,4 +1,5 @@
 #pragma once
+#include "Security.h"
 #include <string>
 using namespace std;
 
@@ -11,6 +12,7 @@ private:
     string password;
 
 public:
+
     AuthenticationData() {};
 
     AuthenticationData(const string& phone, const string& password) :
