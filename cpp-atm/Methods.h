@@ -43,4 +43,23 @@ public:
 		return userCards;
 	};
 
-};
+	bool insertNewTrans(Transaction& t) {
+
+		return tdao.insertTrans(t);
+
+	};
+
+	vector<Transaction> getAllTransByCard(const string& number) {
+
+		vector<Transaction> tvec;
+		list<Transaction> tlist = tdao.getAllByCard(number);
+
+
+		for (Transaction const& i : tlist) {
+			tvec.push_back(i);
+		}
+
+		return tvec;
+	};
+
+}; 

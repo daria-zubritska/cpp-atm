@@ -98,10 +98,10 @@ bool TransactionDao::insertTrans(Transaction& t)
 	sqlite3_stmt* stmt;
 
 	sqlite3_prepare_v2(_db->db(), "INSERT INTO transactions(card_from, card_to, sum_change, date_time) VALUES (?, ?, ?, ?);", -1, &stmt, NULL);
-	sqlite3_bind_text(stmt, 1, t.getFrom().c_str(), -1, SQLITE_STATIC);
-	sqlite3_bind_text(stmt, 2, t.getTo().c_str(), -1, SQLITE_STATIC);
+	sqlite3_bind_text(stmt, 1, (t.getFrom() == "" ? NULL : t.getFrom().c_str()), -1, SQLITE_TRANSIENT);
+	sqlite3_bind_text(stmt, 2, (t.getTo() == "" ? NULL : t.getTo().c_str()), -1, SQLITE_TRANSIENT);
 	sqlite3_bind_double(stmt, 3, t.getSum());
-	sqlite3_bind_text(stmt, 4, t.getDatetime().c_str(), -1, SQLITE_STATIC);
+	sqlite3_bind_text(stmt, 4, t.getDatetime().c_str(), -1, SQLITE_TRANSIENT);
 
 	return sqlite3_step(stmt) == SQLITE_DONE;
 }

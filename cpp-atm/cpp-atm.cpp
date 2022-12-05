@@ -47,12 +47,20 @@ void tests() {
 	
 	Methods m = Methods();
 
+	Transaction t = Transaction("", "0000 0000 0000 0000", 10, "05/12/2022");
+	cout << m.insertNewTrans(t) << endl;
+	vector<Transaction> tts = m.getAllTransByCard("0000 0000 0000 0000");
+
+	for (Transaction const& i : tts) {
+		cout << i.getFrom()  << " " << i.getTo() << " " << i.getSum() << " " << i.getDatetime() << endl;
+	}
+
 	//cout << "Is phone correct: " << (a.getPhone() == "1231231234") << endl;
 	//cout << "Is password correct: " << (a.getPassword() == "pass with salt") << endl;
 	// 
-	cout << "Is account correct: " << m.checkAccount("1231231234", "pass with salt") << endl;
+	//cout << "Is account correct: " << m.checkAccount("1231231234", "pass with salt") << endl;
 
-	m.getAllCards("1231231234");
+	//m.getAllCards("1231231234");
 
 	//cout << "\nCardDaoTest" << endl;
 	//CardDao cdao = CardDao(DBController::getController());

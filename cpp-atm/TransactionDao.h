@@ -22,7 +22,7 @@ public:
 
 	~TransactionDao();
 
-	//NULL where number should be - means the money are from or going to the "real world"
+	//empty string where number should be - means the money are from or going to the "real world"
 	Transaction getById(int);
 
 	double getBalance(const string&);
