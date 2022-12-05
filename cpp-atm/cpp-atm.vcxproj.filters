@@ -46,6 +46,9 @@
     <Filter Include="Source Files\UI\Controls\Screens">
       <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Security">
+      <UniqueIdentifier>{645c9334-d50f-4427-b3da-e62898ba4b60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -151,6 +154,12 @@
     </ClInclude>
     <ClInclude Include="Label.h">
       <Filter>Header Files\UI\Controls</Filter>
+    </ClInclude>
+    <ClInclude Include="Methods.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="Security.h">
+      <Filter>Header Files\Security</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -176,9 +176,11 @@
     <ClInclude Include="DebitCard.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="LoginScreen.h" />
+    <ClInclude Include="Methods.h" />
     <ClInclude Include="PinInput.h" />
     <ClInclude Include="Screen.cpp" />
     <ClInclude Include="Screen.h" />
+    <ClInclude Include="Security.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />
     <ClInclude Include="UserData.h" />
