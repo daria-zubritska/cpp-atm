@@ -23,25 +23,34 @@ public:
 		return ((a.getPhone() == phone) && (a.getPassword() == sec.encryptPassword(pass)));
 	};
 
-	vector<Card> getAllCards(const string& phone)
+	vector<CreditCard> getAllCCards(const string& phone)
 	{
 
-		vector<Card> userCards;
+		vector<CreditCard> userCCards;
 
 		list<CreditCard> clist = cdao.getAllByUserC(phone, tdao);
 
-		for (Card const& i : clist) {
-			userCards.push_back(i);
+		for (CreditCard const& i : clist) {
+			userCCards.push_back(i);
 		}
+
+		return userCCards;
+	};
+
+	vector<DebitCard> getAllDCards(const string& phone)
+	{
+
+		vector<DebitCard> userDCards;
 
 		list<DebitCard> dlist = cdao.getAllByUserD(phone, tdao);
 
-		for (Card const& i : dlist) {
-			userCards.push_back(i);
+		for (DebitCard const& i : dlist) {
+			userDCards.push_back(i);
 		}
 
-		return userCards;
+		return userDCards;
 	};
+
 
 	bool insertNewTrans(Transaction& t) {
 

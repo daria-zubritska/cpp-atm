@@ -66,7 +66,7 @@ DBController::DBController() {
 		return;
 	}
 	else {
-		cout << "Opened Database Successfully!" << endl;
+		//cout << "Opened Database Successfully!" << endl;
 		init();
 	}
 
@@ -75,5 +75,5 @@ DBController::DBController() {
 DBController::~DBController() {
 
 	sqlite3_close(_DB);
-	cout << "Database Closed Successfully!" << endl;
+	//cout << "Database Closed Successfully!" << endl;
 }

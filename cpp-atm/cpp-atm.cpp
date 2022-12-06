@@ -102,14 +102,48 @@ int main()
 	cout << visibleCount;
 	*/
 	
-	CardSellectionScreen screen ({});
+	/*CardSellectionScreen screen ({ "1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16" });
 	screen.draw();
-	screen.excecute();
+	screen.excecute();*/
+	Methods methods;
 
-	/*LoginScreen screen{120,40,1005 + 200,700 + 200};
-	screen.draw();
-	screen.execute();*/
-	
+	LoginScreen logScreen;
+	logScreen.draw();
+
+	while (true)
+	{
+		if (logScreen.execute() == 0)
+		{
+			if (methods.checkAccount(logScreen.getLogin(), logScreen.getPassword()))
+			{
+				break;
+			}
+			else
+			{
+				MessageBox(NULL, L"Wrong login or password", L"Error", MB_ICONERROR);
+				logScreen.clearInputs();
+			}
+		}
+	}
+
+	vector<CreditCard> userCCards = methods.getAllCCards(logScreen.getLogin());
+	vector<DebitCard> userDCards = methods.getAllDCards(logScreen.getLogin());
+	vector<string> elements;
+	unsigned int j = 1;
+
+	for (CreditCard const& i : userCCards) {
+		elements.push_back(to_string(j) + " " + "Credit card" + " " + i.getNumber());
+		j++;
+	}
+
+	for (DebitCard const& i : userDCards) {
+		elements.push_back(to_string(j) + " " + "Debit card" + " " + i.getNumber());
+		j++;
+	}
+
+	CardSellectionScreen cardScreen (elements);
+	cardScreen.draw();
+	cardScreen.excecute();
 
 
 
