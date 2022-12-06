@@ -159,7 +159,7 @@ int Menu::execute()
 
 		if (key == VK_UP)
 		{
-			if (cursorPosition != scrollIndex || cursorPosition == 0)
+			if ((cursorPosition != scrollIndex || cursorPosition == 0) && elements.size() != 1)
 				eraseCursor();
 			//move cursor
 			--cursorPosition;
@@ -167,9 +167,10 @@ int Menu::execute()
 			{
 				cursorPosition = elements.size() - 1;
 				scrollIndex = elements.size() - visibleCount;
-				for (int i = visibleCount - 1; i >= 0; --i)
+				int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
+				for (int i = buf; i >= 0; --i)
 				{
-					labels[i].setText(elements[i + elements.size() - visibleCount]);
+					labels[i].setText(elements[i + elements.size() - buf-1]);
 					labels[i].draw();
 				}
 			}
@@ -187,23 +188,24 @@ int Menu::execute()
 				}
 			}
 			else
-				drawCursor();
+				if(elements.size() > 1)
+					drawCursor();
 			continue;
 		}
 
 		if (key == VK_DOWN)
 		{
-			if (cursorPosition != scrollIndex + visibleCount - 1 || cursorPosition == elements.size()-1)
+			if ((cursorPosition != scrollIndex + visibleCount - 1 || cursorPosition == elements.size()-1) && elements.size() != 1)
 				eraseCursor();
 
 			//move cursor
 			++cursorPosition;
-			if (cursorPosition == elements.size())
+			if (cursorPosition == elements.size() )
 			{
 				cursorPosition = 0;
 				scrollIndex = 0;
 				//shift up
-				for (int i = 0; i < labels.size(); ++i)
+				for (int i = 0; i < labels.size() && i < elements.size(); ++i)
 				{
 					labels[i].setText(elements[i]);
 					labels[i].draw();
