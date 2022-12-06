@@ -12,7 +12,7 @@ public:
 
 	CardNumberInput(Model model, int xpos, int ypos);
 
-	std::string excecute();
+	std::string execute();
 
 private:
 	int keyToIntValue(SHORT key);

@@ -7,11 +7,15 @@ protected:
 	int xpos, ypos;
 	Model model;
 public:
-	std::string excecute(){}
+	Control(){}
 	Control(int xpos, int ypos, Model model)
 	{
 		this->xpos = xpos;
 		this->ypos = ypos;
 		this->model = model;
 	}
+
+	int execute(){}
+	void draw(){}
+	
 };

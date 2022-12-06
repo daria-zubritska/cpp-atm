@@ -146,6 +146,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CardSellectionScreen.cpp" />
+    <ClCompile Include="CardSellectionScreen.h" />
+    <ClCompile Include="UIModels.cpp" />
+    <ClCompile Include="UIModels.h" />
     <ClCompile Include="AuthDataDao.cpp" />
     <ClCompile Include="CardNumberInput.cpp" />
     <ClCompile Include="ConsoleUtils.cpp" />
@@ -156,12 +160,12 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="LoginScreen.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Model.h" />
     <ClCompile Include="PinInput.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
-    <ClCompile Include="UIModels.cpp" />
-    <ClCompile Include="UIModels.h" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +180,7 @@
     <ClInclude Include="DebitCard.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="LoginScreen.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Methods.h" />
     <ClInclude Include="PinInput.h" />
     <ClInclude Include="Screen.cpp" />

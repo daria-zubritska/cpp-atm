@@ -1,8 +1,10 @@
-﻿#include "Input.h"
+﻿#pragma once
+#include "Input.h"
+#include "ConsoleUtils.h"
 
 Input::Input(int xpos, int ypos, int xSize, int ySize, int length) : Control(xpos, ypos, {})
 {
-	model = generateFrame(xSize, ySize);
+	model = Model::generateFrame(xSize, ySize);
 	this->length = length;
 	buffer = "";
 }
@@ -12,58 +14,6 @@ void Input::draw()
 	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
 }
 
-Model Input::generateFrame(int xsize, int ysize)
-{
-	Model model;
-	model.symbols = "";
-	for (int j = 0; j < ysize; ++j)
-	{
-		for (int i = 0; i < xsize; ++i)
-		{
-			if (i == 0 && j == 0)
-			{
-				model.symbols += UIModels::windowModel.getRows()[2]; //╔
-				continue;
-			}
-
-			if (i == 0 && j == ysize - 1)
-			{
-				model.symbols += UIModels::windowModel.getRows()[3]; //╚
-				continue;
-			}
-
-			if (i == xsize - 1 && j == 0)
-			{
-				model.symbols += UIModels::windowModel.getRows()[4]; //╗
-				continue;
-			}
-
-			if (i == xsize - 1 && j == ysize - 1)
-			{
-				model.symbols += UIModels::windowModel.getRows()[5]; //╝
-				continue;
-			}
-
-			if (i == 0 || i == xsize - 1)
-			{
-				model.symbols += UIModels::windowModel.getRows()[1];//║
-				continue;
-			}
-
-			if (j == 0 || j == ysize - 1)
-			{
-				model.symbols += UIModels::windowModel.getRows()[6]; //═
-				continue;
-			}
-
-			model.symbols += ' ';
-		}
-		model.symbols += '\n';
-	}
-	model.width = xsize;
-	model.height = ysize;
-	return model;
-}
 int Input::execute()
 {
 	SHORT key;
@@ -91,6 +41,9 @@ int Input::execute()
 				removeSymbol(key);
 			continue;
 		}
+		//filter arrows to evade weird input
+		if (key == VK_UP || key == VK_DOWN || key == VK_RIGHT || key == VK_LEFT)
+			continue;
 
 		//else, any key, add symbol
 		if (buffer.length() <= length)

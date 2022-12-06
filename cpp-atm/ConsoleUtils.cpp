@@ -97,3 +97,10 @@ void ConsoleUtils::ClearScreen()
 	);
 	SetConsoleCursorPosition(console, topLeft);
 }
+
+std::string ConsoleUtils::extend(std::string val, int size)
+{
+	for (int i = 0; i < size; ++i)
+		val += ' ';
+	return val;
+}

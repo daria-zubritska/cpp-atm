@@ -7,7 +7,7 @@ CardNumberInput::CardNumberInput(Model model, int xpos, int ypos)
 	this->ypos = ypos;
 }
 
-std::string CardNumberInput::excecute()
+std::string CardNumberInput::execute()
 {
 	std::string buf = "";
 	int* prev_size = new int{ 1 };

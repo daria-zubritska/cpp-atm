@@ -1,6 +1,6 @@
-#pragma once
-#include <iostream>
+﻿#pragma once
 #include "UIModels.h"
+#include <iostream>
 #include <fstream>
 
 Model UIModels::terminalScreen;
@@ -87,7 +87,6 @@ std::vector<std::string> UIModels::loadLetters(const std::string filename)
 				q = 0;
 				break;
 			}
-
 		}
 		file.close();
 	}
@@ -99,3 +98,4 @@ std::vector<std::string> UIModels::loadLetters(const std::string filename)
 	return letter_vector;
 
 }
+

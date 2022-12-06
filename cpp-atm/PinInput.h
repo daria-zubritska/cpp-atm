@@ -1,7 +1,5 @@
-#include "Model.h"
-#include "ConsoleUtils.h"
-#include <iostream>
 #pragma once
+#include "Model.h"
 
 class PinInput
 {
@@ -11,8 +9,7 @@ private:
 public:
 	
 	PinInput(Model model, int xpos, int ypos);
-
-	std::string excecute();
+	std::string execute();
 
 private:
 	int keyToIntValue(SHORT key);

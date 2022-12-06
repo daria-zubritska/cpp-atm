@@ -16,11 +16,11 @@ public:
 	std::string getPassword();
 	std::string getLogin();
 	void clearInputs();
-	LoginScreen(int width, int height, int xSize, int ySize);
+	LoginScreen();
 
 	void init();
 
 	void draw();
-	int excecute();
+	int execute();
 
 };

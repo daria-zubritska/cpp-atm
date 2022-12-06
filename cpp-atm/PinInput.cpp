@@ -1,5 +1,7 @@
-#include "PinInput.h"
 #pragma once
+#include "PinInput.h"
+#include "ConsoleUtils.h"
+#include <iostream>
 
 PinInput::PinInput(Model model, int xpos, int ypos)
 {
@@ -8,7 +10,7 @@ PinInput::PinInput(Model model, int xpos, int ypos)
 	this->ypos = ypos;
 }
 
-std::string PinInput::excecute()
+std::string PinInput::execute()
 {
 	std::string buf = "";
 	SHORT key{ 0 };

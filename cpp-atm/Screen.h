@@ -17,5 +17,4 @@ public:
 		this->width = width;
 		this->height = height;
 	}
-	void excecute(){}
 };

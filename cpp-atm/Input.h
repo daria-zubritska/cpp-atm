@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Control.h"
-#include "ConsoleUtils.h"
 class Input : Control
 {
 private:
@@ -17,7 +16,6 @@ public:
 private:
 
 protected:
-	Model generateFrame(int xsize, int ysize);
 	void addSymbol(SHORT key);
 	void removeSymbol(SHORT key);
 };

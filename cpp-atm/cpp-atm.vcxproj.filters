@@ -102,6 +102,18 @@
     <ClCompile Include="Label.cpp">
       <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="CardSellectionScreen.h">
+      <Filter>Header Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="CardSellectionScreen.cpp">
+      <Filter>Source Files\UI\Controls\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
@@ -160,6 +172,9 @@
     </ClInclude>
     <ClInclude Include="Security.h">
       <Filter>Header Files\Security</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

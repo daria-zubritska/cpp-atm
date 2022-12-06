@@ -16,4 +16,5 @@ public:
 	static void drawAt(int x, int y, char symbol);
 	static SHORT GetKey();
 	static void ClearScreen();
+	static std::string extend(std::string val, int size);
 };

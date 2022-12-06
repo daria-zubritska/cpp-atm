@@ -1,7 +1,7 @@
 #pragma once
 #include "LoginScreen.h"
 
-LoginScreen::LoginScreen(int width, int height, int xSize, int ySize) : Screen(width, height, xSize, ySize)
+LoginScreen::LoginScreen() : Screen(120, 40, 1005 + 200, 700 + 200)
 {
 	init();
 }
@@ -9,7 +9,7 @@ LoginScreen::LoginScreen(int width, int height, int xSize, int ySize) : Screen(w
 void LoginScreen::init()
 {
 	int column1{41}, row1{10}, row2{12}, row3{13}, row4{16}, row5{17};
-	windows.push_back({ width,height });
+	windows.push_back({ 0,0,width,height });
 	labels.push_back({ column1,row1,"LOGIN" });
 	labels.push_back({ column1,row2,"phone number"});
 	inputs.push_back({ column1,row3,40,3,10 });
@@ -27,7 +27,7 @@ void LoginScreen::draw()
 	inputs[1].draw();
 }
 
-int LoginScreen::excecute()
+int LoginScreen::execute()
 {
 	int buf;
 	while (true)
