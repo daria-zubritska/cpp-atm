@@ -1,4 +1,5 @@
 #pragma once
+#include <windows.h>
 #include <string>
 using namespace std;
 
@@ -51,11 +52,33 @@ public:
 	{
 		string cardInfo;
 
-		/*transactionInfo += "Sender: " + fromCard + "\n";
-		transactionInfo += "Receiver: " + toCard + "\n";
-		transactionInfo += "Sum: " + to_string(sum) + "\n";
-		transactionInfo += "Time: " + time;*/
+		cardInfo += "Number: " + number + "\n";
+		cardInfo += "EndDate: " + endDate + "\n";
+		cardInfo += "CVV: " + to_string(cvv) + "\n";
+		cardInfo += "Balance: " + to_string(balance) + "\n";
+		cardInfo += "Currency: " + currency + "\n";
+		if (isActive)
+		{
+			cardInfo += "This card is active";
+		}
+		else
+		{
+			cardInfo += "This card is not active";
+		}
 
 		return cardInfo;
+	}
+
+	void DonateOnZSU(const long double& sum)
+	{
+		if (sum <= balance)
+		{
+			balance -= sum;
+			MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
+		}
+		else
+		{
+			MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
+		}
 	}
 };

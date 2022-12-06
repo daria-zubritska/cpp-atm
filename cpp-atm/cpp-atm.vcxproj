@@ -172,6 +172,7 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="AuthDataDao.h" />
     <ClInclude Include="AuthenticationData.h" />
+    <ClInclude Include="Card.h" />
     <ClInclude Include="CardDao.h" />
     <ClInclude Include="CardNumberInput.h" />
     <ClInclude Include="ConsoleUtils.h" />

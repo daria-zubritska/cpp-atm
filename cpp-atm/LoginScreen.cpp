@@ -14,7 +14,7 @@ void LoginScreen::init()
 	labels.push_back({ column1,row2,"phone number"});
 	inputs.push_back({ column1,row3,40,3,10 });
 	labels.push_back({ column1,row4,"password" });
-	inputs.push_back({ column1,row5,40,3,12 });
+	inputs.push_back({ column1,row5,40,3,16 });
 }
 
 void LoginScreen::draw()

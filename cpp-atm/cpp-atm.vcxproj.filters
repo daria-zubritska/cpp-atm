@@ -176,6 +176,9 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\Account</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Input.h">
