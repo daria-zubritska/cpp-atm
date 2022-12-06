@@ -12,11 +12,11 @@ Transaction TransactionDao::instance(const string& fromCard, const string& toCar
 }
 
 TransactionDao::TransactionDao(DBController* db) : _db(db) {
-	cout << "TransactionDao created" << endl;
+	//cout << "TransactionDao created" << endl;
 }
 
 TransactionDao::~TransactionDao() {
-	cout << "TransactionDao deleted" << endl;
+	//cout << "TransactionDao deleted" << endl;
 }
 
 Transaction TransactionDao::getById(int id)

@@ -21,11 +21,11 @@ DebitCard CardDao::instanceD(const string& number, const string& pin, const stri
 }
 
 CardDao::CardDao(DBController* db) : _db(db) {
-	cout << "CardDao created" << endl;
+	//cout << "CardDao created" << endl;
 }
 
 CardDao::~CardDao() {
-	cout << "CreditCardDao deleted" << endl;
+	//cout << "CreditCardDao deleted" << endl;
 }
 
 CreditCard CardDao::getByNumberC(const string& number, TransactionDao tdao)
@@ -106,7 +106,7 @@ list<DebitCard> CardDao::getAllByUserD(const string& phone, TransactionDao tdao)
 	
 	sqlite3_stmt* stmt;
 
-	sqlite3_prepare_v2(_db->db(), "SELECT * FROM card WHERE number = ?;", -1, &stmt, NULL);
+	sqlite3_prepare_v2(_db->db(), "SELECT * FROM card WHERE owner = ?;", -1, &stmt, NULL);
 	sqlite3_bind_text(stmt, 1, phone.c_str(), -1, SQLITE_STATIC);
 
 	while (sqlite3_step(stmt) != SQLITE_DONE) {

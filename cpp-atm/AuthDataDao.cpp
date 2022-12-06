@@ -11,11 +11,11 @@ AuthenticationData AuthDataDao::instance(const string& phone, const string& pass
 }
 
 AuthDataDao::AuthDataDao(DBController* db) : _db(db) {
-	cout << "AuthDataDao created" << endl;
+	//cout << "AuthDataDao created" << endl;
 }
 
 AuthDataDao::~AuthDataDao() {
-	cout << "AuthDataDao deleted" << endl;
+	//cout << "AuthDataDao deleted" << endl;
 }
 
 AuthenticationData AuthDataDao::getByPhone(const string& phone)
