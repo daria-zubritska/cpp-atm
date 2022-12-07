@@ -16,9 +16,6 @@
 #include "Window.cpp"
 #include "LoginScreen.h"
 #include "CardSellectionScreen.h"
-//AuthDataDao adao = AuthDataDao(DBController::getController());
-//TransactionDao tdao = TransactionDao(DBController::getController());
-//CardDao cdao = CardDao(DBController::getController());
 
 void setup()
 {
