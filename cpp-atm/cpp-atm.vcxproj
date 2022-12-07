@@ -146,8 +146,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CardDataScreen.h" />
+    <ClCompile Include="CardNumberInputScreen.h" />
     <ClCompile Include="CardSellectionScreen.cpp" />
     <ClCompile Include="CardSellectionScreen.h" />
+    <ClCompile Include="SumInputScreen.h" />
     <ClCompile Include="UIModels.cpp" />
     <ClCompile Include="UIModels.h" />
     <ClCompile Include="AuthDataDao.cpp" />
@@ -189,6 +192,7 @@
     <ClInclude Include="Security.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />
+    <ClInclude Include="TransactionInfoScreen.h" />
     <ClInclude Include="UserData.h" />
   </ItemGroup>
   <ItemGroup>

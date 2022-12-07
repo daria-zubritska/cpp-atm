@@ -114,6 +114,15 @@
     <ClCompile Include="CardSellectionScreen.cpp">
       <Filter>Source Files\UI\Controls\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="CardDataScreen.h">
+      <Filter>Header Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="SumInputScreen.h">
+      <Filter>Header Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="CardNumberInputScreen.h">
+      <Filter>Header Files\UI\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
@@ -178,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="Card.h">
       <Filter>Header Files\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="TransactionInfoScreen.h">
+      <Filter>Header Files\UI\Screens</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
