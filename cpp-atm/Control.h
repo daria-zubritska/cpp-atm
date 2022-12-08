@@ -1,6 +1,6 @@
 #pragma once
-#include "UIModels.h"
-
+#include "Model.h"
+#include "VirtualControl.h"
 class Control
 {
 protected:
@@ -15,7 +15,13 @@ public:
 		this->model = model;
 	}
 
-	int execute(){}
-	void draw(){}
+	virtual int execute();
+	virtual void draw();
 	
+	virtual int onReturn();
+	virtual int onEscape();
+	virtual int onTab();
+	virtual int onArrows(SHORT key);
+	virtual int otherInputs(SHORT key);
+	virtual void preExcecute();
 };

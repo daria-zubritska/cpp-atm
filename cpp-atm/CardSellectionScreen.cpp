@@ -1,8 +1,7 @@
 #pragma once
 #include "CardSellectionScreen.h"
 
-CardSellectionScreen::CardSellectionScreen(std::vector<std::string> elements) 
-	: Screen(120, 40, 1005 + 200, 700 + 200)
+CardSellectionScreen::CardSellectionScreen(std::vector<std::string> elements) : Screen(120, 40, 1005 + 200, 700 + 200)
 {
 	init(elements);
 }
@@ -28,7 +27,7 @@ void CardSellectionScreen::draw()
 	menus[0].draw();
 }
 
-int CardSellectionScreen::excecute()
+int CardSellectionScreen::execute()
 {
 	return menus[0].execute();
 }

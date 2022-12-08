@@ -1,16 +1,17 @@
 #pragma once
-#include "Model.h"
-
-class PinInput
+#include "Input.h"
+class PinInput : public Input
 {
 private:
-	Model model;
-	int xpos, ypos;
+	const int multipliter = 4;
 public:
 	
-	PinInput(Model model, int xpos, int ypos);
-	std::string execute();
+	PinInput(int xpos, int ypos);
 
 private:
+	void preExcecute() override;
+	int onReturn() override;
+	void removeSymbol() override;
+	void addSymbol(SHORT key) override;
 	int keyToIntValue(SHORT key);
 };

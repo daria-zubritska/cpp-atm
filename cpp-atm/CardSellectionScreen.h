@@ -16,7 +16,7 @@ public:
 
 	std::string getSelectedCard();
 	void draw();
-	int excecute();
+	int execute();
 private:
 	void init(std::vector<std::string> elements);
 };

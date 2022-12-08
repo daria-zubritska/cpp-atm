@@ -2,57 +2,48 @@
 #include "PinInput.h"
 #include "ConsoleUtils.h"
 #include <iostream>
+#include "UIModels.h"
 
-PinInput::PinInput(Model model, int xpos, int ypos)
+PinInput::PinInput(int xpos, int ypos) : Input(xpos, ypos, 18, 3, 4)
 {
-	this->model = model;
-	this->xpos = xpos;
-	this->ypos = ypos;
+	this->model = UIModels::pinInput;
 }
 
-std::string PinInput::execute()
-{
-	std::string buf = "";
-	SHORT key{ 0 };
-
+void PinInput::preExcecute()
+{	
 	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
 	ConsoleUtils::setCursorPosition(xpos + 2, ypos + 1);
-	int multipliter = 4;
+}
 
-	while (true)
+void PinInput::removeSymbol()
+{
+	ConsoleUtils::setCursorPosition(xpos + 2 + (buffer.size() - 1) * multipliter, ypos + 1);
+	buffer.resize(buffer.size() - 1);
+	std::cout << " ";
+	ConsoleUtils::setCursorPosition(xpos + 2 + (buffer.size()) * multipliter, ypos + 1);
+}
+
+void PinInput::addSymbol(SHORT key)
+{
+	if (key >= 48 && key <= 57 && buffer.size() < 4)
 	{
-		key = ConsoleUtils::GetKey();
-
-		if (key >= 48 && key <= 57 && buf.size() < 4)
-		{
-			//can i delete this???
-			ConsoleUtils::setCursorPosition(xpos + 2 + (buf.size()) * multipliter, ypos + 1);
-			buf += std::to_string((keyToIntValue(key)));
-			std::cout << keyToIntValue(key);
-			if(buf.size() < 3)
-				ConsoleUtils::setCursorPosition(xpos + 2 + (buf.size()) * multipliter, ypos + 1);
-		}
-
-		if (key == VK_RETURN && buf.length() == 4)
-			return buf;
-
-		if (key == VK_ESCAPE)
-		{
-			//escape???
-		}
-
-		if (key == VK_BACK && buf.length() != 0)
-		{
-			ConsoleUtils::setCursorPosition(xpos + 2 + (buf.size() - 1) * multipliter, ypos + 1);
-			buf.resize(buf.size() - 1);
-			std::cout << " ";
-			ConsoleUtils::setCursorPosition(xpos + 2 + (buf.size()) * multipliter, ypos + 1);
-		}
+		//can i delete this???
+		ConsoleUtils::setCursorPosition(xpos + 2 + (buffer.size()) * multipliter, ypos + 1);
+		buffer += std::to_string((keyToIntValue(key)));
+		std::cout << keyToIntValue(key);
+		if (buffer.size() < 3)
+			ConsoleUtils::setCursorPosition(xpos + 2 + (buffer.size()) * multipliter, ypos + 1);
 	}
-	return buf;
 }
 
 int PinInput::keyToIntValue(SHORT key)
 {
 	return key - 48;
+}
+
+int PinInput::onReturn()
+{
+	if (buffer.size() == length)
+		return 0;
+	return -1;
 }

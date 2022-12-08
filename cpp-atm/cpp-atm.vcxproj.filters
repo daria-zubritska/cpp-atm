@@ -84,12 +84,6 @@
     <ClCompile Include="Model.h">
       <Filter>Header Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="PinInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CardNumberInput.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\UI\Controls\Inputs</Filter>
     </ClCompile>
@@ -122,6 +116,27 @@
     </ClCompile>
     <ClCompile Include="CardNumberInputScreen.h">
       <Filter>Header Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="CardNumberInput.cpp">
+      <Filter>Source Files\UI\Controls\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="PinInput.cpp">
+      <Filter>Source Files\UI\Controls\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="SumInput.cpp">
+      <Filter>Source Files\UI\Controls\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="PasswordInput.cpp">
+      <Filter>Source Files\UI\Controls\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="PhoneInput.cpp">
+      <Filter>Source Files\UI\Controls\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualControl.h">
+      <Filter>Header Files\UI\Controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,12 +173,6 @@
     <ClInclude Include="ConsoleUtils.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="PinInput.h">
-      <Filter>Header Files\UI\Controls</Filter>
-    </ClInclude>
-    <ClInclude Include="CardNumberInput.h">
-      <Filter>Header Files\UI\Controls</Filter>
-    </ClInclude>
     <ClInclude Include="Screen.h">
       <Filter>Header Files\UI\Screens</Filter>
     </ClInclude>
@@ -190,6 +199,21 @@
     </ClInclude>
     <ClInclude Include="TransactionInfoScreen.h">
       <Filter>Header Files\UI\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="CardNumberInput.h">
+      <Filter>Header Files\UI\Controls\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="PinInput.h">
+      <Filter>Header Files\UI\Controls\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="SumInput.h">
+      <Filter>Header Files\UI\Controls\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordInput.h">
+      <Filter>Header Files\UI\Controls\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="PhoneInput.h">
+      <Filter>Header Files\UI\Controls\Inputs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

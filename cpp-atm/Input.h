@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include "Control.h"
-class Input : Control
+class Input : public Control
 {
-private:
+protected:
 	int length;
 	std::string buffer;
 public:
@@ -10,12 +10,10 @@ public:
 	void clearBuffer();
 	Input(int xpos, int ypos, int xSize, int ySize, int length);
 
-	int execute();
-	void draw();
-
-private:
-
 protected:
-	void addSymbol(SHORT key);
-	void removeSymbol(SHORT key);
+	virtual void onBack();
+	virtual void removeSymbol();
+	virtual void addSymbol(SHORT key);
+	virtual void preExcecute() override;
+	virtual int otherInputs(SHORT key) override;
 };

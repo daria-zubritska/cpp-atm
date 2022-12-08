@@ -1,21 +1,22 @@
 ﻿#pragma once
-#include "UIModels.h"
+
 #include <iostream>
-#include "Screen.h"
+
+//reqired for setup
+#include "ConsoleUtils.h"
+#include "UIModels.h"
+
+
+//testing
 #include "DBController.h"
-#include "AuthDataDao.h"
-#include "TransactionDao.h"
-#include "CardDao.h"
 #include "Methods.h"
 
-#include "Menu.h"
-#include <windows.h>
-#include "ConsoleUtils.h"
-#include "CardNumberInput.h"
-#include <vector>
-#include "Window.cpp"
+
+//main tests, may be removed later
 #include "LoginScreen.h"
-#include "CardSellectionScreen.h"
+
+
+
 
 void setup()
 {
@@ -85,25 +86,15 @@ void tests() {
 
 int main()
 {
-	//LoginScreen screen{ 120,40,1005 + 200,700 + 200 };
-	//screen.draw();
-	//screen.excecute();
     setup();
-	/*
-	int visibleCount = 0;
-	for (int i = 0; i < 50; ++i)
-		if ((i - 2) % 3 == 0)
-			++visibleCount;
-	cout << visibleCount;
-	visibleCount = 50 / 3;
-	cout << visibleCount;
-	*/
+	LoginScreen screen;
+	screen.draw();
+	screen.execute();
 	
 	/*CardSellectionScreen screen ({ "1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16" });
 	screen.draw();
 	screen.excecute();*/
-	Methods methods;
-
+	/*Methods methods;
 	LoginScreen logScreen;
 	logScreen.draw();
 
@@ -141,7 +132,7 @@ int main()
 	CardSellectionScreen cardScreen (elements);
 	cardScreen.draw();
 	cardScreen.excecute();
-
+	*/
 
 
 	/*while (true)

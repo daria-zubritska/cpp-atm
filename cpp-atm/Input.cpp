@@ -9,51 +9,30 @@ Input::Input(int xpos, int ypos, int xSize, int ySize, int length) : Control(xpo
 	buffer = "";
 }
 
-void Input::draw()
+void Input::preExcecute()
 {
-	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
+	ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
 }
 
-int Input::execute()
+int Input::otherInputs(SHORT key)
 {
-	SHORT key;
-	ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
-	while (true)
+	switch (key)
 	{
-		key = ConsoleUtils::GetKey();
-		
-		if (key == VK_TAB)
-			return 1;
-
-		if (key == VK_RETURN)
-			return 0;
-
-		//idk
-		if (key == VK_ESCAPE)
-		{
-			continue;
-		}
-
-		//remove symbol
-		if (key == VK_BACK)
-		{
-			if(buffer.length() != 0)
-				removeSymbol(key);
-			continue;
-		}
-		//filter arrows to evade weird input
-		if (key == VK_UP || key == VK_DOWN || key == VK_RIGHT || key == VK_LEFT)
-			continue;
-
-		//else, any key, add symbol
+	case VK_BACK:
+		onBack();
+		break;
+	default:
 		if (buffer.length() <= length)
-		{
 			addSymbol(key);
-			continue;
-		}
+		break;
 	}
-
 	return 0;
+}
+
+void Input::onBack()
+{
+	if (buffer.length() != 0)
+		removeSymbol();
 }
 
 void Input::addSymbol(SHORT key)
@@ -64,7 +43,7 @@ void Input::addSymbol(SHORT key)
 		ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
 }
 
-void Input::removeSymbol(SHORT key)
+void Input::removeSymbol()
 {
 	ConsoleUtils::drawAt(xpos + 2 + buffer.size() - 1, ypos + 1, ' ');
 	buffer.resize(buffer.length() - 1);

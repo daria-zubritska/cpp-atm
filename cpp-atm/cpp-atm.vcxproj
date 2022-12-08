@@ -150,6 +150,10 @@
     <ClCompile Include="CardNumberInputScreen.h" />
     <ClCompile Include="CardSellectionScreen.cpp" />
     <ClCompile Include="CardSellectionScreen.h" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="PasswordInput.cpp" />
+    <ClCompile Include="PhoneInput.cpp" />
+    <ClCompile Include="SumInput.cpp" />
     <ClCompile Include="SumInputScreen.h" />
     <ClCompile Include="UIModels.cpp" />
     <ClCompile Include="UIModels.h" />
@@ -169,6 +173,7 @@
     <ClCompile Include="PinInput.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
+    <ClCompile Include="VirtualControl.h" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,10 +191,13 @@
     <ClInclude Include="LoginScreen.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Methods.h" />
+    <ClInclude Include="PasswordInput.h" />
+    <ClInclude Include="PhoneInput.h" />
     <ClInclude Include="PinInput.h" />
     <ClInclude Include="Screen.cpp" />
     <ClInclude Include="Screen.h" />
     <ClInclude Include="Security.h" />
+    <ClInclude Include="SumInput.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />
     <ClInclude Include="TransactionInfoScreen.h" />

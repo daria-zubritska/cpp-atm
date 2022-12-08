@@ -1,5 +1,6 @@
 #pragma once
 #include "LoginScreen.h"
+#include "PasswordInput.h"
 
 LoginScreen::LoginScreen() : Screen(120, 40, 1005 + 200, 700 + 200)
 {
@@ -12,9 +13,9 @@ void LoginScreen::init()
 	windows.push_back({ 0,0,width,height });
 	labels.push_back({ column1,row1,"LOGIN" });
 	labels.push_back({ column1,row2,"phone number"});
-	inputs.push_back({ column1,row3,40,3,10 });
+	phoneInput = PhoneInput{ column1,row3,40,3 };
 	labels.push_back({ column1,row4,"password" });
-	inputs.push_back({ column1,row5,40,3,16 });
+	passwordInput = PasswordInput{ column1,row5,40,3 };
 }
 
 void LoginScreen::draw()
@@ -22,9 +23,9 @@ void LoginScreen::draw()
 	windows[0].draw();
 	labels[0].draw();
 	labels[1].draw();
-	inputs[0].draw();
+	phoneInput.draw();
 	labels[2].draw();
-	inputs[1].draw();
+	passwordInput.draw();
 }
 
 int LoginScreen::execute()
@@ -32,8 +33,8 @@ int LoginScreen::execute()
 	int buf;
 	while (true)
 	{
-		inputs[0].execute();
-		buf = inputs[1].execute();
+		phoneInput.execute();
+		buf = passwordInput.execute();
 		if (buf == 0)
 			break;
 	}
@@ -42,18 +43,18 @@ int LoginScreen::execute()
 
 std::string LoginScreen::getLogin()
 {
-	return inputs[0].getBuffer();
+	return phoneInput.getBuffer();
 }
 
 std::string LoginScreen::getPassword()
 {
-	return inputs[1].getBuffer();
+	return passwordInput.getBuffer();
 }
 
 void LoginScreen::clearInputs()
 {
-	inputs[0].draw();
-	inputs[1].draw();
-	inputs[0].clearBuffer();
-	inputs[1].clearBuffer();
+	phoneInput.clearBuffer();
+	passwordInput.clearBuffer();
+	phoneInput.draw();
+	passwordInput.draw();
 }

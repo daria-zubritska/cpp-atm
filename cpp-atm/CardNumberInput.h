@@ -1,19 +1,19 @@
-#include "Model.h"
+#pragma once
+#include "Input.h"
 #include "ConsoleUtils.h"
 #include <iostream>
-#pragma once
 
-class CardNumberInput
+class CardNumberInput : public Input
 {
 private:
-	Model model;
-	int xpos, ypos;
+	const int multipliter = 4;
 public:
-
-	CardNumberInput(Model model, int xpos, int ypos);
-
-	std::string execute();
+	CardNumberInput(int xpos, int ypos);
 
 private:
 	int keyToIntValue(SHORT key);
-};
+	void preExcecute() override;
+	void addSymbol(SHORT key) override;
+	void removeSymbol() override;
+	int onReturn() override;
+}; 
