@@ -12,7 +12,8 @@ public:
 	std::vector<RECT> replacableRegions{};
 	std::vector<char> replacableSymbols{};
 
-
 	std::vector<std::string> getRows();
 	static Model generateFrame(int xsize, int ysize);
+
+	
 };

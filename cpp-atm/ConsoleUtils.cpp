@@ -5,6 +5,8 @@
 int ConsoleUtils::height;
 int ConsoleUtils::width;
 
+const std::vector<std::string> frameSymbols = ConsoleUtils::getFrameSymbols();
+
 void ConsoleUtils::resize(RECT rect)
 {
     //if(ConsoleUtils::consoleHwnd == nullptr)
@@ -103,4 +105,18 @@ std::string ConsoleUtils::extend(std::string val, int size)
 	for (int i = 0; i < size; ++i)
 		val += ' ';
 	return val;
+}
+
+std::vector<std::string> ConsoleUtils::getFrameSymbols()
+{
+	std::vector<std::string> out;
+	std::string preset = { (char)-30 };
+	preset += (char)-107;
+	out.push_back(preset + (char)-111);
+	out.push_back(preset + (char)-108);
+	out.push_back(preset + (char)-102);
+	out.push_back(preset + (char)-105);
+	out.push_back(preset + (char)-99);
+	out.push_back(preset + (char)-112);
+	return out;
 }

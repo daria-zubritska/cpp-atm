@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Model.h"
-#include "UIModels.h"
+#include <iostream>
+#include "ConsoleUtils.h"
 
 std::vector<std::string> Model::getRows()
 {
@@ -25,43 +26,44 @@ Model Model::generateFrame(int xsize, int ysize)
 {
 	Model model;
 	model.symbols = "";
+
 	for (int j = 0; j < ysize; ++j)
 	{
 		for (int i = 0; i < xsize; ++i)
 		{
 			if (i == 0 && j == 0)
 			{
-				model.symbols += UIModels::windowModel.getRows()[2]; //╔
+				model.symbols += ConsoleUtils::getFrameSymbols()[1]; //╔
 				continue;
 			}
 
 			if (i == 0 && j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[3]; //╚
+				model.symbols += ConsoleUtils::getFrameSymbols()[2]; //╚
 				continue;
 			}
 
 			if (i == xsize - 1 && j == 0)
 			{
-				model.symbols += UIModels::windowModel.getRows()[4]; //╗
+				model.symbols += ConsoleUtils::getFrameSymbols()[3]; //╗
 				continue;
 			}
 
 			if (i == xsize - 1 && j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[5]; //╝
+				model.symbols += ConsoleUtils::getFrameSymbols()[4]; //╝
 				continue;
 			}
 
 			if (i == 0 || i == xsize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[1];//║
+				model.symbols += ConsoleUtils::getFrameSymbols()[0];//║
 				continue;
 			}
 
 			if (j == 0 || j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[6]; //═
+				model.symbols += ConsoleUtils::getFrameSymbols()[5]; //═
 				continue;
 			}
 

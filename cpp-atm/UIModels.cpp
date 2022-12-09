@@ -8,7 +8,6 @@ Model UIModels::terminalFar;
 Model UIModels::pinInput;
 Model UIModels::cardNumberInput;
 Model UIModels::sumInput;
-Model UIModels::windowModel;
 std::vector<std::string> UIModels::letters;
 
 void UIModels::loadModels()
@@ -36,8 +35,6 @@ void UIModels::loadModels()
 	UIModels::sumInput.symbols = load("models/sum_input.txt");
 	UIModels::sumInput.height = 3;
 	UIModels::sumInput.width = 40;
-
-	UIModels::windowModel.symbols = load("models/crap.txt");
 }
 
 std::string UIModels::load(const std::string filename)

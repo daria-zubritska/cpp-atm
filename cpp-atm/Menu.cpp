@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include "UIModels.h"
 #include "ConsoleUtils.h"
 #include <winnt.h>
 #include "Menu.h"
@@ -28,37 +27,37 @@ Model Menu::generateModel(int xsize,int ysize)
 		{
 			if (i == 0 && j == 0)
 			{
-				model.symbols += UIModels::windowModel.getRows()[2]; //╔
+				model.symbols += ConsoleUtils::getFrameSymbols()[1]; //╔
 				continue;
 			}
 
 			if (i == 0 && j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[3]; //╚
+				model.symbols += ConsoleUtils::getFrameSymbols()[2]; //╚
 				continue;
 			}
 
 			if (i == xsize - 1 && j == 0)
 			{
-				model.symbols += UIModels::windowModel.getRows()[4]; //╗
+				model.symbols += ConsoleUtils::getFrameSymbols()[3]; //╗
 				continue;
 			}
 
 			if (i == xsize - 1 && j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[5]; //╝
+				model.symbols += ConsoleUtils::getFrameSymbols()[4]; //╝
 				continue;
 			}
 
 			if (i == 0 || i == xsize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[1];//║
+				model.symbols += ConsoleUtils::getFrameSymbols()[0];//║
 				continue;
 			}
 
 			if (j == 0 || j == ysize - 1)
 			{
-				model.symbols += UIModels::windowModel.getRows()[6]; //═
+				model.symbols += ConsoleUtils::getFrameSymbols()[5]; //═
 				continue;
 			}
 			//sub elements rects
@@ -69,17 +68,17 @@ Model Menu::generateModel(int xsize,int ysize)
 				{
 					if (i == columnOffcet + 1)
 					{
-						model.symbols += UIModels::windowModel.getRows()[2]; //╔
+						model.symbols += ConsoleUtils::getFrameSymbols()[1]; //╔
 						continue;
 					}
 
 					if (i == xsize - 2 - columnOffcet)
 					{
-						model.symbols += UIModels::windowModel.getRows()[4]; //╗
+						model.symbols += ConsoleUtils::getFrameSymbols()[3]; //╗
 						continue;
 					}
 
-					model.symbols += UIModels::windowModel.getRows()[6]; //═
+					model.symbols += ConsoleUtils::getFrameSymbols()[5]; //═
 					continue;
 				}
 
@@ -87,18 +86,18 @@ Model Menu::generateModel(int xsize,int ysize)
 				{
 					if (i == columnOffcet + 1)
 					{
-						model.symbols += UIModels::windowModel.getRows()[3]; //╚
+						model.symbols += ConsoleUtils::getFrameSymbols()[2]; //╚
 						continue;
 					}
 
 					if (i == xsize - 2 - columnOffcet)
 					{
-						model.symbols += UIModels::windowModel.getRows()[5]; //╝
+						model.symbols += ConsoleUtils::getFrameSymbols()[4]; //╝
 						++c;
 						continue;
 					}
 
-					model.symbols += UIModels::windowModel.getRows()[6]; //═
+					model.symbols += ConsoleUtils::getFrameSymbols()[5]; //═
 					continue;
 				}
 
@@ -106,14 +105,14 @@ Model Menu::generateModel(int xsize,int ysize)
 				{
 					if (i == columnOffcet + 1)
 					{
-						model.symbols += UIModels::windowModel.getRows()[1];//║
+						model.symbols += ConsoleUtils::getFrameSymbols()[0];//║
 						labels.push_back(Label{ i + 4 + xpos,j + ypos,"" });
 						continue;
 					}
 
 					if (i == xsize - 2 - columnOffcet)
 					{
-						model.symbols += UIModels::windowModel.getRows()[1];//║
+						model.symbols += ConsoleUtils::getFrameSymbols()[0];//║
 						continue;
 					}
 					model.symbols += ' ';
