@@ -9,7 +9,7 @@ private:
 
 public:
 
-	string encryptPassword(const string& pass) {
+	static string encryptPassword(const string& pass) {
         unsigned int hash = 0;
 
         const unsigned int VALUE = pass.length();

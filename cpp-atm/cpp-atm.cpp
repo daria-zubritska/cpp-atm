@@ -112,7 +112,7 @@ int main()
 			else
 			{
 				MessageBox(NULL, L"Wrong login or password", L"Error", MB_ICONERROR);
-				logScreen.clearInputs();
+				logScreen.clear();
 			}
 		}
 	}

@@ -13,14 +13,12 @@ private:
 	TransactionDao tdao = TransactionDao(DBController::getController());
 	CardDao cdao = CardDao(DBController::getController());
 
-	Security sec = Security();
-
 public:
 
 	bool checkAccount(const string& phone, const string& pass)
 	{
 		AuthenticationData a = adao.getByPhone(phone);
-		return ((a.getPhone() == phone) && (a.getPassword() == sec.encryptPassword(pass)));
+		return ((a.getPhone() == phone) && (a.getPassword() == Security::encryptPassword(pass)));
 	};
 
 	vector<CreditCard> getAllCCards(const string& phone)
