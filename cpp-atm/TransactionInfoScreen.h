@@ -9,10 +9,9 @@ class TransactionInfoScreen : Screen
 private:
 	std::vector<Window> windows;
 	std::vector<Label> labels;
-	std::vector<Menu> menus;
 
 public:
-	TransactionInfoScreen(std::string tranaction, std::string info);
+	TransactionInfoScreen(std::vector<std::string>);
 	void draw() override;
 	int execute() override;
 };

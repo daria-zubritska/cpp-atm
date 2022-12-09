@@ -144,6 +144,9 @@
     <ClCompile Include="IDrawable.h">
       <Filter>Header Files\UI\Interfaces</Filter>
     </ClCompile>
+    <ClCompile Include="TransactionInfoScreen.cpp">
+      <Filter>Source Files\UI\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">

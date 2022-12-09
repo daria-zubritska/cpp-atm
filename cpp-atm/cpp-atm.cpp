@@ -15,6 +15,7 @@
 #include "LoginScreen.h"
 #include "CardSellectionScreen.h"
 #include "CardDataScreen.h"
+#include "TransactionInfoScreen.h"
 
 
 
@@ -89,7 +90,11 @@ int main()
 {
     setup();
 
-	CardDataScreen screen({ "aaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaa" ,"aaaaaaaaaaaaaaaaaaaa" }, { "info here","putin loh", "rusni pizda"}, "1234 1234 1234 1234");
+	/*CardDataScreen screen({"aaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaa" ,"aaaaaaaaaaaaaaaaaaaa"}, {"info here","putin loh", "rusni pizda"}, "1234 1234 1234 1234");
+	screen.draw();
+	screen.execute();*/
+
+	TransactionInfoScreen screen({ "qwefqwefqwe","qefqwefqwefqw","qefqwefqw" });
 	screen.draw();
 	screen.execute();
 
@@ -97,15 +102,16 @@ int main()
 	screen.draw();
 	screen.execute();*/
 
+	/*
 
-
-	/*Methods methods;
+	Methods methods;
 
 	LoginScreen logScreen;
 	logScreen.draw();
 
 	while (true)
 	{
+
 		if (logScreen.execute() == 0)
 		{
 			if (methods.checkAccount(logScreen.getLogin(), logScreen.getPassword()))

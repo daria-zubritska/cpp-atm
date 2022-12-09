@@ -157,6 +157,7 @@
     <ClCompile Include="PhoneInput.cpp" />
     <ClCompile Include="SumInput.cpp" />
     <ClCompile Include="SumInputScreen.h" />
+    <ClCompile Include="TransactionInfoScreen.cpp" />
     <ClCompile Include="UIModels.cpp" />
     <ClCompile Include="UIModels.h" />
     <ClCompile Include="AuthDataDao.cpp" />

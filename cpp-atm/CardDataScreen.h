@@ -18,8 +18,6 @@ public:
 	void draw() override;
 	//if 1 -> transaction data if 0 -> thing 2 -> escape
 	int execute() override;
-	std::string getSelectedTransaction();
-	std::string getSelectedElement();
 	unsigned int getSelectedTransactionIndex();
 	unsigned int getSelectedElementIndex();
 };
