@@ -1,3 +1,4 @@
+#pragma once
 #include "Screen.h"
 #include "Label.h"
 #include "Window.cpp"
@@ -14,9 +15,9 @@ private:
 
 public:
 	CardDataScreen(std::vector<std::string> elements, std::vector<std::string> info,std::string cardNumber);
-	void draw();
+	void draw() override;
 	//if 1 -> transaction data if 0 -> thing 2 -> escape
-	int excecute();
+	int execute() override;
 	std::string getSelectedTransaction();
 	std::string getSelectedElement();
 	unsigned int getSelectedTransactionIndex();

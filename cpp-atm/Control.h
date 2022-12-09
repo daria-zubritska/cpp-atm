@@ -1,7 +1,12 @@
 #pragma once
 #include "Model.h"
 #include "VirtualControl.h"
-class Control
+
+
+#include "IExecutable.h"
+#include "IDrawable.h"
+
+class Control : public IExcecutable,public IDrawable
 {
 protected:
 	int xpos, ypos;
@@ -14,10 +19,8 @@ public:
 		this->ypos = ypos;
 		this->model = model;
 	}
-
-	virtual int execute();
-	virtual void draw();
-	
+	virtual int execute() override;
+	virtual void draw() override;
 	virtual int onReturn();
 	virtual int onEscape();
 	virtual int onTab();

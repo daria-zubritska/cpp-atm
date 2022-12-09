@@ -1,3 +1,4 @@
+#pragma once
 #include "Screen.h"
 #include "Label.h"
 #include "Window.cpp"
@@ -13,7 +14,7 @@ private:
 
 public:
 	CardNumberInputScreen();
-	void draw();
-	int excecute();
+	void draw() override;
+	int execute() override;
 	int getValue();
 };

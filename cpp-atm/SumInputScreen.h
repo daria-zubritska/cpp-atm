@@ -1,10 +1,11 @@
+#pragma once
 #include "Screen.h"
 #include "Label.h"
 #include "Window.cpp"
 #include "Menu.h"
 
 
-class SumInputScreen:Screen
+class SumInputScreen : Screen
 {
 private:
 	std::vector<Window> windows;
@@ -13,7 +14,7 @@ private:
 
 public:
 	SumInputScreen();
-	void draw();
-	int excecute();
+	void draw() override;
+	int execute() override;
 	int getValue();
 };

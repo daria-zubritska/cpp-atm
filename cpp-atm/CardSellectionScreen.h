@@ -17,8 +17,8 @@ public:
 	std::string getSelectedCard();
 	//
 	int getCursorPosition();
-	void draw();
-	int execute();
+	void draw() override;
+	int execute() override;
 private:
 	void init(std::vector<std::string> elements);
 };

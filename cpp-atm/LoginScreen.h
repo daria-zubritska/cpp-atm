@@ -21,6 +21,6 @@ public:
 	void clearInputs();
 
 	void init();
-	void draw();
-	int execute();
+	void draw() override;
+	int execute() override;
 };

@@ -152,6 +152,7 @@
     <ClCompile Include="CardSellectionScreen.cpp" />
     <ClCompile Include="CardSellectionScreen.h" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="IDrawable.h" />
     <ClCompile Include="PasswordInput.cpp" />
     <ClCompile Include="PhoneInput.cpp" />
     <ClCompile Include="SumInput.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="CreditCard.h" />
     <ClInclude Include="DBController.h" />
     <ClInclude Include="DebitCard.h" />
+    <ClInclude Include="IExecutable.h" />
     <ClInclude Include="Label.h" />
     <ClInclude Include="LoginScreen.h" />
     <ClInclude Include="Menu.h" />

@@ -49,6 +49,9 @@
     <Filter Include="Source Files\UI\Screens">
       <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UI\Interfaces">
+      <UniqueIdentifier>{fd4816e8-a568-4c7d-a35f-c9ce637dc1f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpp-atm.cpp">
@@ -141,6 +144,9 @@
     <ClCompile Include="CardDataScreen.cpp">
       <Filter>Source Files\UI\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="IDrawable.h">
+      <Filter>Header Files\UI\Interfaces</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
@@ -217,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="PhoneInput.h">
       <Filter>Header Files\UI\Controls\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="IExecutable.h">
+      <Filter>Header Files\UI\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

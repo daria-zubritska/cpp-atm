@@ -32,9 +32,8 @@ void CardDataScreen::draw()
 		i.draw();
 }
 
-int CardDataScreen::excecute()
+int CardDataScreen::execute()
 {
-	int buf;
 	while (true)
 	{
 

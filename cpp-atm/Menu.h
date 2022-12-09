@@ -13,8 +13,8 @@ private:
 public:
 	Menu(int xpos,int ypos, int xsize, int ysize, std::vector<std::string> elements);
 	Model generateModel(int xsize, int ysize);
-	int execute();
-	void draw();
+	int execute() override;
+	void draw() override;
 	void resetCursor();
 	int getCursorPosition();
 	std::vector<std::string> getElements();

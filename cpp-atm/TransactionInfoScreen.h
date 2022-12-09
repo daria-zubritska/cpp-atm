@@ -1,3 +1,4 @@
+#pragma once
 #include "Screen.h"
 #include "Label.h"
 #include "Window.cpp"
@@ -12,6 +13,6 @@ private:
 
 public:
 	TransactionInfoScreen(std::string tranaction, std::string info);
-	void draw();
-	int excecute();
+	void draw() override;
+	int execute() override;
 };
