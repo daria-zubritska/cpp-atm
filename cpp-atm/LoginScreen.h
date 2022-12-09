@@ -18,9 +18,9 @@ public:
 	LoginScreen();
 	std::string getPassword();
 	std::string getLogin();
-	void clearInputs();
 
 	void init();
+	void clear() override;
 	void draw() override;
 	int execute() override;
 };

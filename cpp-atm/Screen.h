@@ -19,4 +19,5 @@ public:
 		this->width = width;
 		this->height = height;
 	}
+	virtual void clear(){}
 };

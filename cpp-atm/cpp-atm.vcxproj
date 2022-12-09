@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="CardDataScreen.cpp" />
     <ClCompile Include="CardDataScreen.h" />
+    <ClCompile Include="CardNumberInputScreen.cpp" />
     <ClCompile Include="CardNumberInputScreen.h" />
     <ClCompile Include="CardSellectionScreen.cpp" />
     <ClCompile Include="CardSellectionScreen.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="PasswordInput.cpp" />
     <ClCompile Include="PhoneInput.cpp" />
     <ClCompile Include="SumInput.cpp" />
+    <ClCompile Include="SumInputScreen.cpp" />
     <ClCompile Include="SumInputScreen.h" />
     <ClCompile Include="TransactionInfoScreen.cpp" />
     <ClCompile Include="UIModels.cpp" />

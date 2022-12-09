@@ -45,7 +45,16 @@ std::string UIModels::load(const std::string filename)
 	if (file.is_open())
 	{
 		while (getline(file, line))
-			data += line + '\n';
+		{
+			if (line[0] == (char)-17)
+			{
+				for (int i = 1; i < line.length(); ++i)
+					data += line[i];
+				data += '\n';
+			}
+			else
+				data += line + '\n';
+		}
 		file.close();
 	}
 	else

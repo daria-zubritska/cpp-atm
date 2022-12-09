@@ -51,7 +51,7 @@ std::string LoginScreen::getPassword()
 	return passwordInput.getBuffer();
 }
 
-void LoginScreen::clearInputs()
+void LoginScreen::clear()
 {
 	phoneInput.clearBuffer();
 	passwordInput.clearBuffer();

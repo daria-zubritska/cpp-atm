@@ -20,6 +20,7 @@ public:
 	}
 	virtual int execute() override;
 	virtual void draw() override;
+protected:
 	virtual int onReturn();
 	virtual int onEscape();
 	virtual int onTab();

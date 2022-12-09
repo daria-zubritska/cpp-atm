@@ -20,4 +20,5 @@ public:
 	int execute() override;
 	unsigned int getSelectedTransactionIndex();
 	unsigned int getSelectedElementIndex();
+	void clear() override;
 };

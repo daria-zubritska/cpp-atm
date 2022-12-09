@@ -3,18 +3,19 @@
 #include "Label.h"
 #include "Window.cpp"
 #include "Menu.h"
-
+#include "SumInput.h"
 
 class SumInputScreen : Screen
 {
 private:
 	std::vector<Window> windows;
 	std::vector<Label> labels;
-	std::vector<Menu> menus;
+	SumInput input;
 
 public:
 	SumInputScreen();
 	void draw() override;
 	int execute() override;
-	int getValue();
+	std::string getValue();
+	void clear() override;
 };

@@ -65,3 +65,8 @@ unsigned int CardDataScreen::getSelectedElementIndex()
 	return actionMenu.getCursorPosition();
 }
 
+void CardDataScreen::clear()
+{
+	transactionMenu.resetCursor();
+	actionMenu.resetCursor();
+}

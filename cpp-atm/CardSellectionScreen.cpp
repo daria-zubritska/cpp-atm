@@ -22,7 +22,6 @@ void CardSellectionScreen::init(std::vector<std::string> elements)
 	//windows.push_back({41,9,})
 	labels.push_back({ 31,5,"SELECT CARD" });
 	menus.push_back({ 31,6,60,20,elements });
-	
 }
 
 void CardSellectionScreen::draw()
@@ -36,3 +35,4 @@ int CardSellectionScreen::execute()
 {
 	return menus[0].execute();
 }
+

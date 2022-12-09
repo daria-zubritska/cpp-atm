@@ -147,6 +147,12 @@
     <ClCompile Include="TransactionInfoScreen.cpp">
       <Filter>Source Files\UI\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="SumInputScreen.cpp">
+      <Filter>Source Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="CardNumberInputScreen.cpp">
+      <Filter>Source Files\UI\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DBController.h">
