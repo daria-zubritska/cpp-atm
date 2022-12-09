@@ -25,5 +25,5 @@ private:
 	int onTab() override { return 0; };
 	int onArrows(SHORT key) override { return 0; };
 	int otherInputs(SHORT key) override { return 0; };
-	void preExcecute() override {};
+	void preExecute() override {};
 };

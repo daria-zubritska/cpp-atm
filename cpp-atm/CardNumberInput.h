@@ -12,7 +12,7 @@ public:
 
 private:
 	int keyToIntValue(SHORT key);
-	void preExcecute() override;
+	void preExecute() override;
 	void addSymbol(SHORT key) override;
 	void removeSymbol() override;
 	int onReturn() override;

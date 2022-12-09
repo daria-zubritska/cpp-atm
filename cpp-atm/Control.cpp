@@ -9,7 +9,7 @@ int Control::otherInputs(SHORT key) { return 0; }
 int Control::execute()
 {
 	SHORT key;
-	preExcecute();
+	preExecute();
 	int buf = 0;
 	while (true)
 	{
@@ -57,7 +57,7 @@ int Control::onArrows(SHORT key)
 	return 0;
 }
 
-void Control::preExcecute()
+void Control::preExecute()
 {
 
 }

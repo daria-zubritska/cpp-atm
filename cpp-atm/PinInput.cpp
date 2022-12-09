@@ -9,7 +9,7 @@ PinInput::PinInput(int xpos, int ypos) : Input(xpos, ypos, 18, 3, 4)
 	this->model = UIModels::pinInput;
 }
 
-void PinInput::preExcecute()
+void PinInput::preExecute()
 {	
 	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
 	ConsoleUtils::setCursorPosition(xpos + 2, ypos + 1);

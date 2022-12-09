@@ -9,7 +9,7 @@ public:
 	PinInput(int xpos, int ypos);
 
 private:
-	void preExcecute() override;
+	void preExecute() override;
 	int onReturn() override;
 	void removeSymbol() override;
 	void addSymbol(SHORT key) override;

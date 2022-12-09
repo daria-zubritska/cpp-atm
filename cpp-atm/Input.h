@@ -14,6 +14,6 @@ protected:
 	virtual void onBack();
 	virtual void removeSymbol();
 	virtual void addSymbol(SHORT key);
-	virtual void preExcecute() override;
+	virtual void preExecute() override;
 	virtual int otherInputs(SHORT key) override;
 };

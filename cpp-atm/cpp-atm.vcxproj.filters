@@ -129,9 +129,6 @@
     <ClCompile Include="PhoneInput.cpp">
       <Filter>Source Files\UI\Controls\Inputs</Filter>
     </ClCompile>
-    <ClCompile Include="VirtualControl.h">
-      <Filter>Header Files\UI\Controls</Filter>
-    </ClCompile>
     <ClCompile Include="UIModels.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>

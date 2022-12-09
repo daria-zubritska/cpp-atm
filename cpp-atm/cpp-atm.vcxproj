@@ -175,7 +175,6 @@
     <ClCompile Include="PinInput.cpp" />
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
-    <ClCompile Include="VirtualControl.h" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>

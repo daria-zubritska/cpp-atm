@@ -1,6 +1,5 @@
 #pragma once
 #include "Model.h"
-#include "VirtualControl.h"
 
 
 #include "IExecutable.h"
@@ -26,5 +25,5 @@ public:
 	virtual int onTab();
 	virtual int onArrows(SHORT key);
 	virtual int otherInputs(SHORT key);
-	virtual void preExcecute();
+	virtual void preExecute();
 };

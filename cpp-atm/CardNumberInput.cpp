@@ -9,7 +9,7 @@ CardNumberInput::CardNumberInput(int xpos, int ypos) : Input(xpos,ypos,30,3,16)
 	model = UIModels::cardNumberInput;
 }
 
-void CardNumberInput::preExcecute()
+void CardNumberInput::preExecute()
 {
 	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
 	ConsoleUtils::setCursorPosition(xpos + 2, ypos + 1);

@@ -9,7 +9,7 @@ Input::Input(int xpos, int ypos, int xSize, int ySize, int length) : Control(xpo
 	buffer = "";
 }
 
-void Input::preExcecute()
+void Input::preExecute()
 {
 	ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
 }

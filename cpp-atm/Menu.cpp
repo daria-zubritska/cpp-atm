@@ -3,12 +3,12 @@
 #include <winnt.h>
 #include "Menu.h"
 
-Menu::Menu(int xpos, int ypos, int xSize,int ySize, std::vector<std::string> elements)
+const int xCursorOffcet{ 2 };
+
+Menu::Menu(int xpos, int ypos, int xSize, int ySize, std::vector<std::string> elements) : Control(xpos, ypos, {})
 {
-	this->xpos = xpos;
-	this->ypos = ypos;
-	this->model = generateModel(xSize, ySize);
 	this->elements = elements;
+	this->model = generateModel(xSize,ySize);
 	for (int i = 0; i < elements.size() && i < labels.size(); ++i)
 		labels[i].setText(elements[i]);
 }
@@ -130,119 +130,98 @@ Model Menu::generateModel(int xsize,int ysize)
 
 }
 
-int Menu::execute()
+int Menu::onTab()
 {
-	int xcursorOffcet{ 2 };
-	SHORT key;
-	if (cursorPosition == 0)
-		drawCursor();
-	ConsoleUtils::setCursorPosition(labels[0].getXpos() - xcursorOffcet, labels[0].getYpos());
+	ConsoleUtils::drawAt(labels[cursorPosition - scrollIndex].getXpos() - 2, labels[cursorPosition - scrollIndex].getYpos(), '-');
+	return 1;
+}
 
-	while (true)
+int Menu::onArrows(SHORT key)
+{
+	switch (key)
 	{
-		key = ConsoleUtils::GetKey();
-
-		if (key == VK_TAB)
+	case VK_UP:
+		if ((cursorPosition != scrollIndex || cursorPosition == 0) && elements.size() != 1)
+			eraseCursor();
+		//move cursor
+		--cursorPosition;
+		if (cursorPosition == -1)
 		{
-			ConsoleUtils::drawAt(labels[cursorPosition - scrollIndex].getXpos() - 2, labels[cursorPosition - scrollIndex].getYpos(), '-');
-			return 1;
-		}
-
-		if (key == VK_RETURN)
-			return 0;
-
-		//idk
-		if (key == VK_ESCAPE)
-		{
-			return 2;
-		}
-
-		if (key == VK_UP)
-		{
-			if ((cursorPosition != scrollIndex || cursorPosition == 0) && elements.size() != 1)
-				eraseCursor();
-			//move cursor
-			--cursorPosition;
-			if (cursorPosition == -1)
+			cursorPosition = elements.size() - 1;
+			scrollIndex = (int)elements.size() - visibleCount;
+			if (scrollIndex < 0)
 			{
+				scrollIndex = 0;
 				cursorPosition = elements.size() - 1;
-				scrollIndex = (int)elements.size() - visibleCount;
-				if (scrollIndex < 0)
-				{
-					scrollIndex = 0;
-					cursorPosition = elements.size() - 1;
-				}
-				else
-				{
-					int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
-					for (int i = buf; i >= 0; --i)
-					{
-						labels[i].setText(elements[i + elements.size() - buf - 1]);
-						labels[i].draw();
-					}
-				}
-			}
-
-
-			if (cursorPosition == scrollIndex-1)
-			{
-				--scrollIndex;
-				//shift up
-				for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
-				{
-					///TODO: extend value before pushing or modify label??
-					labels[i - scrollIndex].setText(elements[i]);
-					labels[i - scrollIndex].draw();
-				}
 			}
 			else
-				if(elements.size() > 1)
-					drawCursor();
-			continue;
-		}
-
-		if (key == VK_DOWN)
-		{
-			if ((cursorPosition != scrollIndex + visibleCount - 1 || cursorPosition == elements.size()-1) && elements.size() != 1)
-				eraseCursor();
-
-			//move cursor
-			++cursorPosition;
-			if (cursorPosition == elements.size() )
 			{
-				cursorPosition = 0;
-				scrollIndex = 0;
-				//shift up
-				for (int i = 0; i < labels.size() && i < elements.size(); ++i)
+				int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
+				for (int i = buf; i >= 0; --i)
 				{
-					labels[i].setText(elements[i]);
+					labels[i].setText(elements[i + elements.size() - buf - 1]);
 					labels[i].draw();
 				}
 			}
-
-			if (cursorPosition == scrollIndex + visibleCount)
-			{
-				++scrollIndex;
-				//shift down
-				for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
-				{
-					///TODO: extend value before pushing or modify label??
-					labels[i - scrollIndex].setText(elements[i]);
-					labels[i - scrollIndex].draw();
-				}
-			}
-			else
-				drawCursor();
-			continue;
 		}
 
-		if (key == VK_RIGHT || key == VK_LEFT)
+
+		if (cursorPosition == scrollIndex - 1)
 		{
-			continue;
+			--scrollIndex;
+			//shift up
+			for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
+			{
+				///TODO: extend value before pushing or modify label??
+				labels[i - scrollIndex].setText(elements[i]);
+				labels[i - scrollIndex].draw();
+			}
 		}
-	}
+		else
+			if (elements.size() > 1)
+				drawCursor();
+		return 0;
+		break;
+	case VK_DOWN:
+		if ((cursorPosition != scrollIndex + visibleCount - 1 || cursorPosition == elements.size() - 1) && elements.size() != 1)
+			eraseCursor();
 
-	return 0;
+		//move cursor
+		++cursorPosition;
+		if (cursorPosition == elements.size())
+		{
+			cursorPosition = 0;
+			scrollIndex = 0;
+			//shift up
+			for (int i = 0; i < labels.size() && i < elements.size(); ++i)
+			{
+				labels[i].setText(elements[i]);
+				labels[i].draw();
+			}
+		}
+
+		if (cursorPosition == scrollIndex + visibleCount)
+		{
+			++scrollIndex;
+			//shift down
+			for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
+			{
+				///TODO: extend value before pushing or modify label??
+				labels[i - scrollIndex].setText(elements[i]);
+				labels[i - scrollIndex].draw();
+			}
+		}
+		else
+			drawCursor();
+		return 0;
+		break;
+	}
+}
+
+void Menu::preExecute()
+{
+	drawCursor();
+	ConsoleUtils::setCursorPosition(labels[0].getXpos() - xCursorOffcet, labels[0].getYpos());
 }
 
 void Menu::resetCursor()
