@@ -30,4 +30,5 @@ public:
 	list<Transaction> getAllByCard(const string&);
 
 	bool insertTrans(Transaction&);
+
 };

@@ -48,7 +48,7 @@ public:
 	void setCurrency(string newCurrency) { currency = newCurrency; };
 	void setIsActive(bool newIsActive) { isActive = newIsActive; };
 
-	string GetCard()
+	virtual string getCard()
 	{
 		string cardInfo;
 

@@ -14,6 +14,8 @@
 
 //main tests, may be removed later
 #include "LoginScreen.h"
+#include "CardSellectionScreen.h"
+#include "CardDataScreen.h"
 
 
 
@@ -94,7 +96,8 @@ int main()
 	/*CardSellectionScreen screen ({ "1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16" });
 	screen.draw();
 	screen.excecute();*/
-	/*Methods methods;
+	Methods methods;
+
 	LoginScreen logScreen;
 	logScreen.draw();
 
@@ -116,29 +119,58 @@ int main()
 
 	vector<CreditCard> userCCards = methods.getAllCCards(logScreen.getLogin());
 	vector<DebitCard> userDCards = methods.getAllDCards(logScreen.getLogin());
-	vector<string> elements;
+	vector<string> cardStrings;
+	vector<string> cardNumbers;
 	unsigned int j = 1;
 
 	for (CreditCard const& i : userCCards) {
-		elements.push_back(to_string(j) + " " + "Credit card" + " " + i.getNumber());
+		cardNumbers.push_back(i.getNumber());
+		cardStrings.push_back(to_string(j) + " " + "Credit card" + " " + i.getNumber());
 		j++;
 	}
 
 	for (DebitCard const& i : userDCards) {
-		elements.push_back(to_string(j) + " " + "Debit card" + " " + i.getNumber());
+		cardNumbers.push_back(i.getNumber());
+		cardStrings.push_back(to_string(j) + " " + "Debit card" + " " + i.getNumber());
 		j++;
 	}
 
-	CardSellectionScreen cardScreen (elements);
+	CardSellectionScreen cardScreen(cardStrings);
 	cardScreen.draw();
-	cardScreen.excecute();
-	*/
-
-
-	/*while (true)
+	if (cardScreen.execute() == 0)
 	{
-		cout << _getch();
-	}*/
+		string number = cardNumbers.at((int)(cardScreen.getSelectedCard().at(0) - '0') - 1);
+		vector<Transaction> userTransactions = methods.getAllTransByCard(number);
+		vector<string> transactionStrings;
+		//vector<string> transactions;
+		unsigned int k = 1;
+
+		for (Transaction const& i : userTransactions) {
+			transactionStrings.push_back(to_string(k) + " " + i.getDatetime() + " " + to_string(i.getSum()));
+			k++;
+		}
+
+		string info;
+
+		for (CreditCard& i : userCCards) {
+			if (i.getNumber() == number)
+			{
+				info = i.getCard();
+			}
+		}
+
+		for (DebitCard& i : userDCards) {
+			if (i.getNumber() == number)
+			{
+				info = i.getCard();
+			}
+		}
+
+		//CardDataScreen cardData(transactionStrings, info);
+
+
+
+	}
 
 
 	//setup();

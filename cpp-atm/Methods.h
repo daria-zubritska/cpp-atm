@@ -52,13 +52,15 @@ public:
 	};
 
 
-	bool insertNewTrans(Transaction& t) {
+	bool insertNewTrans(Transaction& t) 
+	{
 
 		return tdao.insertTrans(t);
 
 	};
 
-	vector<Transaction> getAllTransByCard(const string& number) {
+	vector<Transaction> getAllTransByCard(const string& number) 
+	{
 
 		vector<Transaction> tvec;
 		list<Transaction> tlist = tdao.getAllByCard(number);
@@ -70,5 +72,6 @@ public:
 
 		return tvec;
 	};
+
 
 }; 

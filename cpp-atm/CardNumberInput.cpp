@@ -1,7 +1,7 @@
 #pragma once
 #include "CardNumberInput.h"
 //header breaks everything, idunno why
-#include "UIModels.cpp"
+#include "UIModels.h"
 
 
 CardNumberInput::CardNumberInput(int xpos, int ypos) : Input(xpos,ypos,30,3,16)

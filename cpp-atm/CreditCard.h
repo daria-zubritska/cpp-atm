@@ -27,4 +27,10 @@ public:
 	double getCredLim() const { return credLim; };
 
 	void setCredLim(double newCredLim) { credLim = newCredLim; };
+
+	string getCard() override
+	{
+		return Card::getCard() + "\n" + "Credit limit: " + to_string(credLim);
+	}
+
 };
