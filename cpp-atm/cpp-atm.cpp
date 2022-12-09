@@ -5,11 +5,10 @@
 //reqired for setup
 #include "ConsoleUtils.h"
 #include "UIModels.h"
-
+#include "Methods.h"
 
 //testing
 #include "DBController.h"
-#include "Methods.h"
 
 
 //main tests, may be removed later
@@ -195,7 +194,6 @@ int main()
     /*Screen screen{UIModels::terminalScreen};
     screen.execute();*/
     //cout << UIModels::terminalScreen.symbols;
-    //мануальне видалення не забувати)
  
 
 	//tests();

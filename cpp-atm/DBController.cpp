@@ -39,7 +39,7 @@ void DBController::init()
 	if (newfile.is_open()) {
 		string tp;
 
-		while (getline(newfile, tp)) { //read data from file object and put it into string.
+		while (getline(newfile, tp)) {
 
 			exit = sqlite3_exec(_DB, tp.data(), NULL, 0, &messaggeError);
 
@@ -50,7 +50,7 @@ void DBController::init()
 				sqlite3_free(messaggeError);
 			}
 		}
-		newfile.close(); //close the file object.
+		newfile.close();
 	}
 
 
