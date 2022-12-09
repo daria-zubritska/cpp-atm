@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include "Card.h"
+#include <vector>
+
 using namespace std;
 
 class CreditCard : public Card
@@ -28,9 +30,11 @@ public:
 
 	void setCredLim(double newCredLim) { credLim = newCredLim; };
 
-	string getCard() override
+	vector<string> getCard() override
 	{
-		return Card::getCard() + "\n" + "Credit limit: " + to_string(credLim);
+		vector<string> cardInfo = Card::getCard();
+		cardInfo.push_back("Credit limit: " + to_string(credLim));
+		return cardInfo;
 	}
 
 };

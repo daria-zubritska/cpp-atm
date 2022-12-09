@@ -1,6 +1,7 @@
 #pragma once
 #include <windows.h>
 #include <string>
+#include <vector>
 using namespace std;
 
 class Card
@@ -48,22 +49,22 @@ public:
 	void setCurrency(string newCurrency) { currency = newCurrency; };
 	void setIsActive(bool newIsActive) { isActive = newIsActive; };
 
-	virtual string getCard()
+	virtual vector<string> getCard()
 	{
-		string cardInfo;
+		vector<string> cardInfo;
 
-		cardInfo += "Number: " + number + "\n";
-		cardInfo += "EndDate: " + endDate + "\n";
-		cardInfo += "CVV: " + to_string(cvv) + "\n";
-		cardInfo += "Balance: " + to_string(balance) + "\n";
-		cardInfo += "Currency: " + currency + "\n";
+		cardInfo.push_back("Number: " + number);
+		cardInfo.push_back("EndDate: " + endDate);
+		cardInfo.push_back("CVV: " + to_string(cvv));
+		cardInfo.push_back("Balance: " + to_string(balance));
+		cardInfo.push_back("Currency: " + currency);
 		if (isActive)
 		{
-			cardInfo += "This card is active";
+			cardInfo.push_back("This card is active");
 		}
 		else
 		{
-			cardInfo += "This card is not active";
+			cardInfo.push_back("This card is not active");
 		}
 
 		return cardInfo;
