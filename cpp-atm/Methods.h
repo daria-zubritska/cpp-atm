@@ -59,6 +59,12 @@ public:
 
 	};
 
+	Transaction getTransById(int id)
+	{
+		return tdao.getById(id);
+	}
+
+
 	vector<Transaction> getAllTransByCard(const string& number) 
 	{
 

@@ -29,14 +29,14 @@ public:
     long double getSum() const { return sum; };
     string getDatetime() const { return time; };
 
-    string getTransaction() 
+    vector<string> getTransaction() 
     {
-        string transactionInfo;
+        vector<string> transactionInfo;
 
-        transactionInfo += "Sender: " + fromCard + "\n";
-        transactionInfo += "Receiver: " + toCard + "\n";
-        transactionInfo += "Sum: " + to_string(sum) + "\n";
-        transactionInfo += "Time: " + time;
+        transactionInfo.push_back("Sender: " + fromCard);
+        transactionInfo.push_back("Receiver: " + toCard);
+        transactionInfo.push_back("Sum: " + to_string(sum));
+        transactionInfo.push_back("Time: " + time);
 
         return transactionInfo;
     }
