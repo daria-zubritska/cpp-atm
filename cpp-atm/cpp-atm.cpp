@@ -95,7 +95,7 @@ int main()
 
 
 
-	/*Methods methods;
+	Methods methods;
 
 	LoginScreen logScreen;
 	logScreen.draw();
@@ -142,7 +142,7 @@ int main()
 		string number = cardNumbers.at(cardScreen.getCursorPosition());
 		vector<Transaction> userTransactions = methods.getAllTransByCard(number);
 		vector<string> transactionStrings;
-		vector<string> transactions;
+		//vector<string> transactions;
 		unsigned int k = 1;
 
 		for (Transaction const& i : userTransactions) {
@@ -170,7 +170,12 @@ int main()
 		cardData.draw();
 		cardData.execute();
 
-
+		if (cardData.execute() == 1)
+		{
+			TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
+			transInfoScr.draw();
+			transInfoScr.execute();
+		}
 
 	}
 
