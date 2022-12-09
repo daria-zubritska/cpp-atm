@@ -5,10 +5,15 @@ CardSellectionScreen::CardSellectionScreen(std::vector<std::string> elements) : 
 {
 	init(elements);
 }
-
+//deprecated 
 std::string CardSellectionScreen::getSelectedCard()
 {
 	return menus[0].getElements()[menus[0].getCursorPosition()];
+}
+
+int CardSellectionScreen::getCursorPosition()
+{
+	return menus[0].getCursorPosition();
 }
 
 void CardSellectionScreen::init(std::vector<std::string> elements)
