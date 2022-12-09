@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CardDataScreen.cpp" />
     <ClCompile Include="CardDataScreen.h" />
     <ClCompile Include="CardNumberInputScreen.h" />
     <ClCompile Include="CardSellectionScreen.cpp" />

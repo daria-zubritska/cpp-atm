@@ -43,11 +43,11 @@
     <Filter Include="Header Files\UI\Controls\Inputs">
       <UniqueIdentifier>{0226cef7-026c-435e-bddf-81856d7d4442}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI\Controls\Screens">
-      <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Security">
       <UniqueIdentifier>{645c9334-d50f-4427-b3da-e62898ba4b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Screens">
+      <UniqueIdentifier>{49c4e5ec-d86c-41ae-8543-231355ccf8e0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,16 +69,7 @@
     <ClCompile Include="CardDao.cpp">
       <Filter>Resource Files\DBControllerImpl</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleUtils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="UIModels.h">
-      <Filter>Header Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="UIModels.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Control.h">
       <Filter>Header Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="Model.h">
@@ -91,7 +82,7 @@
       <Filter>Header Files\UI\Controls</Filter>
     </ClCompile>
     <ClCompile Include="LoginScreen.cpp">
-      <Filter>Source Files\UI\Controls\Screens</Filter>
+      <Filter>Source Files\UI\Screens</Filter>
     </ClCompile>
     <ClCompile Include="Label.cpp">
       <Filter>Source Files\UI\Controls</Filter>
@@ -106,7 +97,7 @@
       <Filter>Header Files\UI\Screens</Filter>
     </ClCompile>
     <ClCompile Include="CardSellectionScreen.cpp">
-      <Filter>Source Files\UI\Controls\Screens</Filter>
+      <Filter>Source Files\UI\Screens</Filter>
     </ClCompile>
     <ClCompile Include="CardDataScreen.h">
       <Filter>Header Files\UI\Screens</Filter>
@@ -137,6 +128,18 @@
     </ClCompile>
     <ClCompile Include="VirtualControl.h">
       <Filter>Header Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="UIModels.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleUtils.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.h">
+      <Filter>Header Files\UI\Controls</Filter>
+    </ClCompile>
+    <ClCompile Include="CardDataScreen.cpp">
+      <Filter>Source Files\UI\Screens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

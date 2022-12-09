@@ -154,7 +154,7 @@ int Menu::execute()
 		//idk
 		if (key == VK_ESCAPE)
 		{
-			continue;
+			return 2;
 		}
 
 		if (key == VK_UP)
@@ -166,12 +166,20 @@ int Menu::execute()
 			if (cursorPosition == -1)
 			{
 				cursorPosition = elements.size() - 1;
-				scrollIndex = elements.size() - visibleCount;
-				int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
-				for (int i = buf; i >= 0; --i)
+				scrollIndex = (int)elements.size() - visibleCount;
+				if (scrollIndex < 0)
 				{
-					labels[i].setText(elements[i + elements.size() - buf-1]);
-					labels[i].draw();
+					scrollIndex = 0;
+					cursorPosition = elements.size() - 1;
+				}
+				else
+				{
+					int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
+					for (int i = buf; i >= 0; --i)
+					{
+						labels[i].setText(elements[i + elements.size() - buf - 1]);
+						labels[i].draw();
+					}
 				}
 			}
 

@@ -4,9 +4,10 @@ class Label
 {
 protected:
 	std::string text;
-	int xpos, ypos;
+	int xpos, ypos,length;
 public:
-	Label(int xpos,int ypos,std::string text);
+	Label(int xpos,int ypos,int length,std::string text);
+	Label(int xpos, int ypos, std::string text);
 	void draw();
 	int getXpos();
 	int getYpos();

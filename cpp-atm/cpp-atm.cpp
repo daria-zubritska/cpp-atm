@@ -90,10 +90,16 @@ int main()
 {
     setup();
 
-	/*CardSellectionScreen screen ({ "1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16" });
+	CardDataScreen screen({ "aaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaa" ,"aaaaaaaaaaaaaaaaaaaa" }, { "info here","putin loh", "rusni pizda"}, "1234 1234 1234 1234");
 	screen.draw();
-	screen.excecute();*/
-	Methods methods;
+
+	/*CardSellectionScreen screen({"1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16"});
+	screen.draw();
+	screen.execute();*/
+
+
+
+	/*Methods methods;
 
 	LoginScreen logScreen;
 	logScreen.draw();
@@ -168,7 +174,7 @@ int main()
 
 
 	}
-
+	*/
 
 	//setup();
 	//CardNumberInput a(UIModels::cardNumberInput, 10, 10);

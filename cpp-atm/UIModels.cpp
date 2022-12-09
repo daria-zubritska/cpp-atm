@@ -13,12 +13,11 @@ std::vector<std::string> UIModels::letters;
 void UIModels::loadModels()
 {
 	///TODO: add replacableRegions, replacable symbols
+	// defenetely you won't do this 
 	UIModels::terminalScreen.symbols = load("models/terminal_screen.txt");
 	UIModels::terminalScreen.height = 40;
 	UIModels::terminalScreen.width = 134;
 	
-	//UIModels::terminalScreen.replacableRegions.push_back(RECT{15,})
-	//UIModels::terminalScreen.replacableSymbols;
 	UIModels::terminalFar.symbols = load("models/terminal_far.txt");
 	UIModels::terminalFar.height = 40;
 	UIModels::terminalFar.width = 100;
