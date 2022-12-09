@@ -89,22 +89,13 @@ void tests() {
 int main()
 {
     setup();
-
-	/*CardDataScreen screen({"aaaaaaaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaa" ,"aaaaaaaaaaaaaaaaaaaa"}, {"info here","putin loh", "rusni pizda"}, "1234 1234 1234 1234");
-	screen.draw();
-	screen.execute();*/
-
-	TransactionInfoScreen screen({ "qwefqwefqwe","qefqwefqwefqw","qefqwefqw" });
-	screen.draw();
-	screen.execute();
-
 	/*CardSellectionScreen screen({"1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16"});
 	screen.draw();
 	screen.execute();*/
 
-	/*
 
-	Methods methods;
+
+	/*Methods methods;
 
 	LoginScreen logScreen;
 	logScreen.draw();
@@ -148,10 +139,10 @@ int main()
 	cardScreen.draw();
 	if (cardScreen.execute() == 0)
 	{
-		string number = cardNumbers.at((int)(cardScreen.getSelectedCard().at(0) - '0') - 1);
+		string number = cardNumbers.at(cardScreen.getCursorPosition());
 		vector<Transaction> userTransactions = methods.getAllTransByCard(number);
 		vector<string> transactionStrings;
-		//vector<string> transactions;
+		vector<string> transactions;
 		unsigned int k = 1;
 
 		for (Transaction const& i : userTransactions) {
@@ -159,7 +150,7 @@ int main()
 			k++;
 		}
 
-		string info;
+		vector<string> info;
 
 		for (CreditCard& i : userCCards) {
 			if (i.getNumber() == number)
@@ -175,12 +166,13 @@ int main()
 			}
 		}
 
-		//CardDataScreen cardData(transactionStrings, info);
+		CardDataScreen cardData(transactionStrings, info, "Card: " + number);
+		cardData.draw();
+		cardData.execute();
 
 
 
 	}
-	*/
 
 	//setup();
 	//CardNumberInput a(UIModels::cardNumberInput, 10, 10);
