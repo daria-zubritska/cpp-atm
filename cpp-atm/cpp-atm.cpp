@@ -16,6 +16,7 @@
 #include "CardSellectionScreen.h"
 #include "CardDataScreen.h"
 #include "TransactionInfoScreen.h"
+#include "SumInputScreen.h"
 
 
 
@@ -140,35 +141,11 @@ int main()
 	if (cardScreen.execute() == 0)
 	{
 		string number = cardNumbers.at(cardScreen.getCursorPosition());
-		vector<Transaction> userTransactions = methods.getAllTransByCard(number);
-		vector<string> transactionStrings;
-		//vector<string> transactions;
-		unsigned int k = 1;
 
-		for (Transaction const& i : userTransactions) {
-			transactionStrings.push_back(to_string(k) + " " + i.getDatetime() + " " + to_string(i.getSum()));
-			k++;
-		}
-
-		vector<string> info;
-
-		for (CreditCard& i : userCCards) {
-			if (i.getNumber() == number)
-			{
-				info = i.getCard();
-			}
-		}
-
-		for (DebitCard& i : userDCards) {
-			if (i.getNumber() == number)
-			{
-				info = i.getCard();
-			}
-		}
-
-		CardDataScreen cardData(transactionStrings, info, "Card: " + number);
+		CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(userCCards, userDCards, number), "Card: " + number);
 		cardData.draw();
-		cardData.execute();
+
+		SumInputScreen sumInpScr;
 
 		if (cardData.execute() == 1)
 		{
@@ -176,6 +153,27 @@ int main()
 			transInfoScr.draw();
 			transInfoScr.execute();
 		}
+		if (cardData.execute() == 0)
+		{
+			methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
+		}
+
+		/*switch (cardData.execute())
+		{
+		case 0:
+			sumInpScr.draw();
+			if (sumInpScr.execute() == 0)
+			{
+				methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
+			}
+			break;
+		case 1:
+			transInfoScr.draw();
+			transInfoScr.execute();
+			break;
+		default:
+			break;
+		}*/
 
 	}
 

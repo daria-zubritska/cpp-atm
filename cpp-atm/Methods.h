@@ -63,19 +63,78 @@ public:
 	}
 
 
-	vector<Transaction> getAllTransByCard(const string& number) 
+	vector<Transaction> transVector(const string& number)
 	{
-
-		vector<Transaction> tvec;
+		vector<Transaction> userTransactions;
 		list<Transaction> tlist = tdao.getAllByCard(number);
 
 
 		for (Transaction const& i : tlist) {
-			tvec.push_back(i);
+			userTransactions.push_back(i);
+		}
+		return userTransactions;
+	}
+
+	vector<string> getAllTransStringsByCard(const string& number) 
+	{
+
+		vector<string> transactionStrings;
+		unsigned int k = 1;
+
+		for (Transaction const& i : transVector(number))
+		{
+			transactionStrings.push_back(to_string(k) + " " + i.getDatetime() + " " + to_string(i.getSum()));
+			k++;
 		}
 
-		return tvec;
+		return transactionStrings;
 	};
+
+	vector<Transaction> getAllTransByCard(const string& number)
+	{
+
+		vector<Transaction> userTransactions = transVector(number);
+
+		return userTransactions;
+	};
+
+	vector<string> getCardInfoByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number)
+	{
+		vector<string> info;
+		for (CreditCard& i : userCCards) {
+			if (i.getNumber() == number)
+			{
+				info = i.getCard();
+			}
+		}
+
+		for (DebitCard& i : userDCards) {
+			if (i.getNumber() == number)
+			{
+				info = i.getCard();
+			}
+		}
+		return info;
+	}
+
+	void donateOnZSUByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
+	{
+		for (CreditCard& i : userCCards) {
+			if (i.getNumber() == number)
+			{
+				i.DonateOnZSU(stold(sum));
+			}
+		}
+
+		for (DebitCard& i : userDCards) {
+			if (i.getNumber() == number)
+			{
+				i.DonateOnZSU(stold(sum));
+			}
+		}
+	}
+
+
 
 
 }; 
