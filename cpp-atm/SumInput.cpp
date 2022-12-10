@@ -12,7 +12,7 @@ int SumInput::otherInputs(SHORT key)
 		onBack();
 		break;
 	default:
-		if (buffer.length() <= length && key >= 48 && key <= 57 && buffer.size())
+		if (buffer.length() <= length && key >= 48 && key <= 57)
 			addSymbol(key);
 		break;
 	}

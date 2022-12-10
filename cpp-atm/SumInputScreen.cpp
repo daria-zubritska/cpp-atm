@@ -2,7 +2,7 @@
 
 SumInputScreen::SumInputScreen()
 	: Screen(120, 40, 1005 + 200, 700 + 200),
-	input(41, 13, 40, 3,20)
+	input(41, 13, 3, 36,20)
 {
 	windows.push_back({ 0,0,width,height });
 	windows.push_back({ 41,0,36,3 });
