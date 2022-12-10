@@ -29,7 +29,7 @@ public:
 
 		list<CreditCard> clist = cdao.getAllByUserC(phone, tdao);
 
-		for (CreditCard const& i : clist) 
+		for (CreditCard const& i : clist)
 		{
 			userCCards.push_back(i);
 		}
@@ -44,7 +44,7 @@ public:
 
 		list<DebitCard> dlist = cdao.getAllByUserD(phone, tdao);
 
-		for (DebitCard const& i : dlist) 
+		for (DebitCard const& i : dlist)
 		{
 			userDCards.push_back(i);
 		}
@@ -65,14 +65,14 @@ public:
 		list<Transaction> tlist = tdao.getAllByCard(number);
 
 
-		for (Transaction const& i : tlist) 
+		for (Transaction const& i : tlist)
 		{
 			userTransactions.push_back(i);
 		}
 		return userTransactions;
 	}
 
-	vector<string> getAllTransStringsByCard(const string& number) 
+	vector<string> getAllTransStringsByCard(const string& number)
 	{
 
 		vector<string> transactionStrings;
@@ -98,7 +98,7 @@ public:
 	vector<string> getCardInfoByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number)
 	{
 		vector<string> info;
-		for (CreditCard& i : userCCards) 
+		for (CreditCard& i : userCCards)
 		{
 			if (i.getNumber() == number)
 			{
@@ -106,7 +106,7 @@ public:
 			}
 		}
 
-		for (DebitCard& i : userDCards) 
+		for (DebitCard& i : userDCards)
 		{
 			if (i.getNumber() == number)
 			{
@@ -122,19 +122,21 @@ public:
 		if (stod(sum) <= 0) return false;
 
 		double lim = 0;
-		for (CreditCard& i : userCCards) 
+		for (CreditCard& i : userCCards)
 		{
 			if (i.getNumber() == number)
 			{
 				lim = i.getBalance() + i.getCredLim();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
-		for (DebitCard& i : userDCards) 
+		for (DebitCard& i : userDCards)
 		{
 			if (i.getNumber() == number)
 			{
 				lim = i.getBalance();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -143,7 +145,7 @@ public:
 
 			time_t t = time(0);
 			struct tm timeStruct;
-			localtime_s(&timeStruct,&t);
+			localtime_s(&timeStruct, &t);
 			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 			string to = "";
 
@@ -151,7 +153,7 @@ public:
 		}
 	}
 
-	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string numberTo, string sum)
+	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string& numberTo, string sum)
 	{
 
 		if (stod(sum) <= 0) return false;
@@ -164,9 +166,11 @@ public:
 			if (i.getNumber() == numberFrom)
 			{
 				lim = i.getBalance() + i.getCredLim();
+				if (!i.getIsActive()) return false;
 			}
 			if (i.getNumber() == numberTo) {
 				exists = true;
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -175,9 +179,11 @@ public:
 			if (i.getNumber() == numberFrom)
 			{
 				lim = i.getBalance();
+				if (!i.getIsActive()) return false;
 			}
 			if (i.getNumber() == numberTo) {
 				exists = true;
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -206,6 +212,7 @@ public:
 			if (i.getNumber() == number)
 			{
 				lim = i.getBalance() + i.getCredLim();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -214,6 +221,7 @@ public:
 			if (i.getNumber() == number)
 			{
 				lim = i.getBalance();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -235,12 +243,11 @@ public:
 
 		if (stod(sum) <= 0) return false;
 
-		double lim = 0;
 		for (CreditCard& i : userCCards)
 		{
 			if (i.getNumber() == number)
 			{
-				lim = i.getBalance() + i.getCredLim();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
@@ -248,21 +255,18 @@ public:
 		{
 			if (i.getNumber() == number)
 			{
-				lim = i.getBalance();
+				if (!i.getIsActive()) return false;
 			}
 		}
 
-		if (lim - stod(sum) < 0) return false;
-		else {
+		time_t t = time(0);
+		struct tm timeStruct;
+		localtime_s(&timeStruct, &t);
+		string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
+		string to = "";
 
-			time_t t = time(0);
-			struct tm timeStruct;
-			localtime_s(&timeStruct, &t);
-			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
-			string to = "";
+		return tdao.insertTrans(to, number, stod(sum), str);
 
-			return tdao.insertTrans(to, number, stod(sum), str);
-		}
 	}
 
 	vector<string> getCardStringsVector(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards)
@@ -288,13 +292,13 @@ public:
 		vector<string> cardNumbers;
 		unsigned int j = 1;
 
-		for (CreditCard const& i : userCCards) 
+		for (CreditCard const& i : userCCards)
 		{
 			cardNumbers.push_back(i.getNumber());
 			j++;
 		}
 
-		for (DebitCard const& i : userDCards) 
+		for (DebitCard const& i : userDCards)
 		{
 			cardNumbers.push_back(i.getNumber());
 			j++;
@@ -306,4 +310,4 @@ public:
 
 
 
-}; 
+};

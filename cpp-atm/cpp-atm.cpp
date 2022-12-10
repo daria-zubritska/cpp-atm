@@ -7,7 +7,6 @@
 #include "UIModels.h"
 #include "Methods.h"
 
-//main tests, may be removed later
 #include "LoginScreen.h"
 #include "CardSellectionScreen.h"
 #include "CardDataScreen.h"
@@ -27,9 +26,6 @@ void setup()
 int main()
 {
     setup();
-	/*CardSellectionScreen screen({"1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","11","12","13","14","15","16"});
-	screen.draw();
-	screen.execute();*/
 
 	Methods methods;
 
@@ -75,10 +71,6 @@ int main()
 											{
 												bool success = methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
 
-												//ты получаешь тру или фолс на возврат. 
-												//Потом, когда предыдущий экран вернется ЗАНОВО вытаскиваешь карту из бд за номером, 
-												//обновляешь ее данные!!!
-												//Так со всеми методами переводов! Иначе кастрация.
 												if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
 												else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
 											}
@@ -94,7 +86,8 @@ int main()
 												sumInpScr.draw();
 												if (sumInpScr.execute() == 0)
 												{
-													bool success = methods.newTransaction(userCCards, userDCards, number, cardNumInpScr.getValue(), sumInpScr.getValue());
+													string to = cardNumInpScr.getValue();
+													bool success = methods.newTransaction(userCCards, userDCards, number, to, sumInpScr.getValue());
 													
 													if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
 													else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
