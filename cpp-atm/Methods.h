@@ -28,7 +28,8 @@ public:
 
 		list<CreditCard> clist = cdao.getAllByUserC(phone, tdao);
 
-		for (CreditCard const& i : clist) {
+		for (CreditCard const& i : clist) 
+		{
 			userCCards.push_back(i);
 		}
 
@@ -42,7 +43,8 @@ public:
 
 		list<DebitCard> dlist = cdao.getAllByUserD(phone, tdao);
 
-		for (DebitCard const& i : dlist) {
+		for (DebitCard const& i : dlist) 
+		{
 			userDCards.push_back(i);
 		}
 
@@ -69,7 +71,8 @@ public:
 		list<Transaction> tlist = tdao.getAllByCard(number);
 
 
-		for (Transaction const& i : tlist) {
+		for (Transaction const& i : tlist) 
+		{
 			userTransactions.push_back(i);
 		}
 		return userTransactions;
@@ -101,14 +104,16 @@ public:
 	vector<string> getCardInfoByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number)
 	{
 		vector<string> info;
-		for (CreditCard& i : userCCards) {
+		for (CreditCard& i : userCCards) 
+		{
 			if (i.getNumber() == number)
 			{
 				info = i.getCard();
 			}
 		}
 
-		for (DebitCard& i : userDCards) {
+		for (DebitCard& i : userDCards) 
+		{
 			if (i.getNumber() == number)
 			{
 				info = i.getCard();
@@ -119,19 +124,59 @@ public:
 
 	void donateOnZSUByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
 	{
-		for (CreditCard& i : userCCards) {
+		for (CreditCard& i : userCCards) 
+		{
 			if (i.getNumber() == number)
 			{
 				i.DonateOnZSU(stold(sum));
 			}
 		}
 
-		for (DebitCard& i : userDCards) {
+		for (DebitCard& i : userDCards) 
+		{
 			if (i.getNumber() == number)
 			{
 				i.DonateOnZSU(stold(sum));
 			}
 		}
+	}
+
+	vector<string> getCardStringsVector(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards)
+	{
+		vector<string> cardStrings;
+		unsigned int j = 1;
+
+		for (CreditCard const& i : userCCards) {
+			cardStrings.push_back(to_string(j) + " " + "Credit card" + " " + i.getNumber());
+			j++;
+		}
+
+		for (DebitCard const& i : userDCards) {
+			cardStrings.push_back(to_string(j) + " " + "Debit card" + " " + i.getNumber());
+			j++;
+		}
+
+		return cardStrings;
+	}
+
+	vector<string> getCardNumbersVector(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards)
+	{
+		vector<string> cardNumbers;
+		unsigned int j = 1;
+
+		for (CreditCard const& i : userCCards) 
+		{
+			cardNumbers.push_back(i.getNumber());
+			j++;
+		}
+
+		for (DebitCard const& i : userDCards) 
+		{
+			cardNumbers.push_back(i.getNumber());
+			j++;
+		}
+
+		return cardNumbers;
 	}
 
 

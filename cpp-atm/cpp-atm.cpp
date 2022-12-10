@@ -94,8 +94,6 @@ int main()
 	screen.draw();
 	screen.execute();*/
 
-
-
 	Methods methods;
 
 	LoginScreen logScreen;
@@ -108,7 +106,44 @@ int main()
 		{
 			if (methods.checkAccount(logScreen.getLogin(), logScreen.getPassword()))
 			{
-				break;
+				vector<CreditCard> userCCards = methods.getAllCCards(logScreen.getLogin());
+				vector<DebitCard> userDCards = methods.getAllDCards(logScreen.getLogin());
+				vector<string> cardStrings = methods.getCardStringsVector(userCCards, userDCards);
+				vector<string> cardNumbers = methods.getCardNumbersVector(userCCards, userDCards);
+
+				CardSellectionScreen cardScreen(cardStrings);
+				cardScreen.draw();
+				if (cardScreen.execute() == 0)
+				{
+					string number = cardNumbers.at(cardScreen.getCursorPosition());
+
+					CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(userCCards, userDCards, number), "Card: " + number);
+					cardData.draw();
+
+					switch (cardData.execute())
+					{
+					case 0:
+					{
+						SumInputScreen sumInpScr;
+						sumInpScr.draw();
+						if (sumInpScr.execute() == 0)
+						{
+							methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
+						}
+						break;
+					}
+					case 1:
+					{
+						TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
+						transInfoScr.draw();
+						transInfoScr.execute();
+						break;
+					}
+					default:
+						break;
+					}
+					break;
+				}
 			}
 			else
 			{
@@ -117,46 +152,6 @@ int main()
 			}
 		}
 	}
-
-	vector<CreditCard> userCCards = methods.getAllCCards(logScreen.getLogin());
-	vector<DebitCard> userDCards = methods.getAllDCards(logScreen.getLogin());
-	vector<string> cardStrings;
-	vector<string> cardNumbers;
-	unsigned int j = 1;
-
-	for (CreditCard const& i : userCCards) {
-		cardNumbers.push_back(i.getNumber());
-		cardStrings.push_back(to_string(j) + " " + "Credit card" + " " + i.getNumber());
-		j++;
-	}
-
-	for (DebitCard const& i : userDCards) {
-		cardNumbers.push_back(i.getNumber());
-		cardStrings.push_back(to_string(j) + " " + "Debit card" + " " + i.getNumber());
-		j++;
-	}
-
-	CardSellectionScreen cardScreen(cardStrings);
-	cardScreen.draw();
-	if (cardScreen.execute() == 0)
-	{
-		string number = cardNumbers.at(cardScreen.getCursorPosition());
-
-		CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(userCCards, userDCards, number), "Card: " + number);
-		cardData.draw();
-
-		SumInputScreen sumInpScr;
-
-		if (cardData.execute() == 1)
-		{
-			TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
-			transInfoScr.draw();
-			transInfoScr.execute();
-		}
-		if (cardData.execute() == 0)
-		{
-			methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
-		}
 
 		/*switch (cardData.execute())
 		{
@@ -174,38 +169,6 @@ int main()
 		default:
 			break;
 		}*/
-
-	}
-
-	//setup();
-	//CardNumberInput a(UIModels::cardNumberInput, 10, 10);
-	//cout << std::endl << a.execute();
-	//system("pause");
-	//ConsoleUtils::ClearScreen();
-	//PinInput input{UIModels::pinInput, 10,10};
-	//cout << std::endl << input.execute();
-	/*Screen screen{UIModels::terminalScreen};
-	screen.execute();*/
-
-
-	//cout << UIModels::terminalScreen.symbols;
-	
-    /*Screen screen{50,20};
-    for (int i = 0; i < 50; i++)
-        cout << "0";*/
-    /*CardNumberInput a(UIModels::cardNumberInput, 10, 10);
-    cout << std::endl << a.execute();
-    system("pause");
-    ConsoleUtils::ClearScreen();
-    PinInput input{UIModels::pinInput, 10,10};
-    cout << std::endl << input.execute();*/
-    /*Screen screen{UIModels::terminalScreen};
-    screen.execute();*/
-    //cout << UIModels::terminalScreen.symbols;
- 
-
-	//tests();
-
-	//мануальне видалення не забувати)
 	DBController::dispose();
+
 }
