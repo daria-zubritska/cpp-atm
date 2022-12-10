@@ -155,13 +155,18 @@ public:
 	{
 
 		if (stod(sum) <= 0) return false;
+		if (numberFrom == numberTo) return false;
 
+		bool exists = false;
 		double lim = 0;
 		for (CreditCard& i : userCCards)
 		{
 			if (i.getNumber() == numberFrom)
 			{
 				lim = i.getBalance() + i.getCredLim();
+			}
+			if (i.getNumber() == numberTo) {
+				exists = true;
 			}
 		}
 
@@ -171,7 +176,12 @@ public:
 			{
 				lim = i.getBalance();
 			}
+			if (i.getNumber() == numberTo) {
+				exists = true;
+			}
 		}
+
+		if (!exists) return exists;
 
 		if (lim - stod(sum) < 0) return false;
 		else {
