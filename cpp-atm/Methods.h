@@ -144,7 +144,7 @@ public:
 			time_t t = time(0);
 			struct tm timeStruct;
 			localtime_s(&timeStruct,&t);
-			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 			string to = "";
 
 			return tdao.insertTrans(number, to, stod(sum), str);
@@ -179,7 +179,7 @@ public:
 			time_t t = time(0);
 			struct tm timeStruct;
 			localtime_s(&timeStruct, &t);
-			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 
 			return tdao.insertTrans(numberFrom, numberTo, stod(sum), str);
 		}
@@ -213,7 +213,7 @@ public:
 			time_t t = time(0);
 			struct tm timeStruct;
 			localtime_s(&timeStruct, &t);
-			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 			string to = "";
 
 			return tdao.insertTrans(number, to, stod(sum), str);
@@ -248,7 +248,7 @@ public:
 			time_t t = time(0);
 			struct tm timeStruct;
 			localtime_s(&timeStruct, &t);
-			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 			string to = "";
 
 			return tdao.insertTrans(to, number, stod(sum), str);
