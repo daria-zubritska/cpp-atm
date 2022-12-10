@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Security {
+class Utility {
 private:
 
 public:
@@ -20,5 +20,4 @@ public:
         }
         return to_string(hash);
 	};
-
 };

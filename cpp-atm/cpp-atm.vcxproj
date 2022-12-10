@@ -201,7 +201,7 @@
     <ClInclude Include="PinInput.h" />
     <ClInclude Include="Screen.cpp" />
     <ClInclude Include="Screen.h" />
-    <ClInclude Include="Security.h" />
+    <ClInclude Include="Utility.h" />
     <ClInclude Include="SumInput.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="TransactionDao.h" />

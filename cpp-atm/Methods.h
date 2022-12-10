@@ -4,7 +4,7 @@
 #include "AuthDataDao.h"
 #include "TransactionDao.h"
 #include "CardDao.h"
-#include "Security.h"
+#include "Utility.h"
 
 class Methods {
 private:
@@ -18,7 +18,7 @@ public:
 	bool checkAccount(const string& phone, const string& pass)
 	{
 		AuthenticationData a = adao.getByPhone(phone);
-		return ((a.getPhone() == phone) && (a.getPassword() == Security::encryptPassword(pass)));
+		return ((a.getPhone() == phone) && (a.getPassword() == Utility::encryptPassword(pass)));
 	};
 
 	vector<CreditCard> getAllCCards(const string& phone)
