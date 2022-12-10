@@ -29,6 +29,6 @@ public:
 
 	list<Transaction> getAllByCard(const string&);
 
-	bool insertTrans(Transaction&);
+	bool insertTrans(string& from, string& to, double sum, string date);
 
 };

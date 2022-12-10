@@ -83,15 +83,15 @@ list<Transaction> TransactionDao::getAllByCard(const string& number)
 	return newList;
 }
 
-bool TransactionDao::insertTrans(Transaction& t)
+bool TransactionDao::insertTrans(string& from, string& to, double sum, string date)
 {
 	sqlite3_stmt* stmt;
 
 	sqlite3_prepare_v2(_db->db(), "INSERT INTO transactions(card_from, card_to, sum_change, date_time) VALUES (?, ?, ?, ?);", -1, &stmt, NULL);
-	sqlite3_bind_text(stmt, 1, (t.getFrom() == "" ? NULL : t.getFrom().c_str()), -1, SQLITE_TRANSIENT);
-	sqlite3_bind_text(stmt, 2, (t.getTo() == "" ? NULL : t.getTo().c_str()), -1, SQLITE_TRANSIENT);
-	sqlite3_bind_double(stmt, 3, t.getSum());
-	sqlite3_bind_text(stmt, 4, t.getDatetime().c_str(), -1, SQLITE_TRANSIENT);
+	sqlite3_bind_text(stmt, 1, (from == "" ? NULL : from.c_str()), -1, SQLITE_TRANSIENT);
+	sqlite3_bind_text(stmt, 2, (to == "" ? NULL : to.c_str()), -1, SQLITE_TRANSIENT);
+	sqlite3_bind_double(stmt, 3, sum);
+	sqlite3_bind_text(stmt, 4, date.c_str(), -1, SQLITE_TRANSIENT);
 
 	return sqlite3_step(stmt) == SQLITE_DONE;
 }

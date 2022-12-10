@@ -5,6 +5,7 @@
 #include "TransactionDao.h"
 #include "CardDao.h"
 #include "Utility.h"
+#include <ctime>
 
 class Methods {
 private:
@@ -51,13 +52,6 @@ public:
 		return userDCards;
 	};
 
-
-	bool insertNewTrans(Transaction& t) 
-	{
-
-		return tdao.insertTrans(t);
-
-	};
 
 	Transaction getTransById(int id)
 	{
@@ -122,13 +116,17 @@ public:
 		return info;
 	}
 
-	void donateOnZSUByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
+	bool donateOnZSUByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
 	{
+
+		if (stod(sum) <= 0) return false;
+
+		double lim = 0;
 		for (CreditCard& i : userCCards) 
 		{
 			if (i.getNumber() == number)
 			{
-				i.DonateOnZSU(stold(sum));
+				lim = i.getBalance() + i.getCredLim();
 			}
 		}
 
@@ -136,8 +134,124 @@ public:
 		{
 			if (i.getNumber() == number)
 			{
-				i.DonateOnZSU(stold(sum));
+				lim = i.getBalance();
 			}
+		}
+
+		if (lim - stod(sum) < 0) return false;
+		else {
+
+			time_t t = time(0);
+			struct tm timeStruct;
+			localtime_s(&timeStruct,&t);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string to = "";
+
+			return tdao.insertTrans(number, to, stod(sum), str);
+		}
+	}
+
+	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string& numberTo, string sum)
+	{
+
+		if (stod(sum) <= 0) return false;
+
+		double lim = 0;
+		for (CreditCard& i : userCCards)
+		{
+			if (i.getNumber() == numberFrom)
+			{
+				lim = i.getBalance() + i.getCredLim();
+			}
+		}
+
+		for (DebitCard& i : userDCards)
+		{
+			if (i.getNumber() == numberFrom)
+			{
+				lim = i.getBalance();
+			}
+		}
+
+		if (lim - stod(sum) < 0) return false;
+		else {
+
+			time_t t = time(0);
+			struct tm timeStruct;
+			localtime_s(&timeStruct, &t);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+
+			return tdao.insertTrans(numberFrom, numberTo, stod(sum), str);
+		}
+	}
+
+	bool moneyOut(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
+	{
+
+		if (stod(sum) <= 0) return false;
+
+		double lim = 0;
+		for (CreditCard& i : userCCards)
+		{
+			if (i.getNumber() == number)
+			{
+				lim = i.getBalance() + i.getCredLim();
+			}
+		}
+
+		for (DebitCard& i : userDCards)
+		{
+			if (i.getNumber() == number)
+			{
+				lim = i.getBalance();
+			}
+		}
+
+		if (lim - stod(sum) < 0) return false;
+		else {
+
+			time_t t = time(0);
+			struct tm timeStruct;
+			localtime_s(&timeStruct, &t);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string to = "";
+
+			return tdao.insertTrans(number, to, stod(sum), str);
+		}
+	}
+
+	bool moneyIn(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number, string sum)
+	{
+
+		if (stod(sum) <= 0) return false;
+
+		double lim = 0;
+		for (CreditCard& i : userCCards)
+		{
+			if (i.getNumber() == number)
+			{
+				lim = i.getBalance() + i.getCredLim();
+			}
+		}
+
+		for (DebitCard& i : userDCards)
+		{
+			if (i.getNumber() == number)
+			{
+				lim = i.getBalance();
+			}
+		}
+
+		if (lim - stod(sum) < 0) return false;
+		else {
+
+			time_t t = time(0);
+			struct tm timeStruct;
+			localtime_s(&timeStruct, &t);
+			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(timeStruct.tm_year);
+			string to = "";
+
+			return tdao.insertTrans(to, number, stod(sum), str);
 		}
 	}
 
