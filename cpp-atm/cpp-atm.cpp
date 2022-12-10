@@ -13,6 +13,7 @@
 #include "CardDataScreen.h"
 #include "TransactionInfoScreen.h"
 #include "SumInputScreen.h"
+#include "CardNumberInputScreen.h"
 
 void setup()
 {
@@ -42,8 +43,8 @@ int main()
 		{
 			if (methods.checkAccount(logScreen.getLogin(), logScreen.getPassword()))
 			{
-				while (true) {
-
+				while (true) 
+				{
 					vector<CreditCard> userCCards = methods.getAllCCards(logScreen.getLogin());
 					vector<DebitCard> userDCards = methods.getAllDCards(logScreen.getLogin());
 					vector<string> cardStrings = methods.getCardStringsVector(userCCards, userDCards);
@@ -53,7 +54,8 @@ int main()
 					cardScreen.draw();
 					if (cardScreen.execute() == 0)
 					{
-						while (true) {
+						while (true) 
+						{
 							string number = cardNumbers.at(cardScreen.getCursorPosition());
 
 							CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(userCCards, userDCards, number), "Card: " + number);
@@ -61,33 +63,83 @@ int main()
 
 							switch (cardData.execute())
 							{
-							case 0:
-							{
-								SumInputScreen sumInpScr;
-								sumInpScr.draw();
-								if (sumInpScr.execute() == 0)
+								case 0:
 								{
-									bool success = methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
+									switch (cardData.getSelectedElementIndex()) 
+									{
+										case 0:
+										{
+											SumInputScreen sumInpScr;
+											sumInpScr.draw();
+											if (sumInpScr.execute() == 0)
+											{
+												bool success = methods.donateOnZSUByNumber(userCCards, userDCards, number, sumInpScr.getValue());
 
-									//ты получаешь тру или фолс на возврат. 
-									//Потом, когда предыдущий экран вернется ЗАНОВО вытаскиваешь карту из бд за номером, 
-									//обновляешь ее данные!!!
-									//Так со всеми методами переводов! Иначе кастрация.
-									if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
-									else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
+												//ты получаешь тру или фолс на возврат. 
+												//Потом, когда предыдущий экран вернется ЗАНОВО вытаскиваешь карту из бд за номером, 
+												//обновляешь ее данные!!!
+												//Так со всеми методами переводов! Иначе кастрация.
+												if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
+												else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
+											}
+											break;
+										}
+										case 1:
+										{
+											CardNumberInputScreen cardNumInpScr;
+											cardNumInpScr.draw();
+											if (cardNumInpScr.execute() == 0)
+											{
+												SumInputScreen sumInpScr;
+												sumInpScr.draw();
+												if (sumInpScr.execute() == 0)
+												{
+													bool success = methods.newTransaction(userCCards, userDCards, number, cardNumInpScr.getValue(), sumInpScr.getValue());
+													
+													if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
+													else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
+												}
+											}
+											break;
+										}
+										case 2:
+										{
+											SumInputScreen sumInpScr;
+											sumInpScr.draw();
+											if (sumInpScr.execute() == 0)
+											{
+												bool success = methods.moneyOut(userCCards, userDCards, number, sumInpScr.getValue());
+
+												if (success) MessageBox(NULL, L"The money has been successfully withdrawn", L"Success", MB_ICONINFORMATION);
+												else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
+											}
+											break;
+										}
+										case 3:
+										{
+											SumInputScreen sumInpScr;
+											sumInpScr.draw();
+											if (sumInpScr.execute() == 0)
+											{
+												bool success = methods.moneyIn(userCCards, userDCards, number, sumInpScr.getValue());
+
+												if (success) MessageBox(NULL, L"The money has been successfully added", L"Success", MB_ICONINFORMATION);
+												else MessageBox(NULL, L"Operation failed", L"Error", MB_ICONERROR);
+											}
+											break;
+										}
+									}
+									break;
 								}
-								break;
+								case 1:
+								{
+									TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
+									transInfoScr.draw();
+									transInfoScr.execute();
+									break;
+								}
 							}
-							case 1:
-							{
-								TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
-								transInfoScr.draw();
-								transInfoScr.execute();
-								break;
-							}
-							default:
-								break;
-							}
+
 							break;
 						}
 					}

@@ -151,7 +151,7 @@ public:
 		}
 	}
 
-	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string& numberTo, string sum)
+	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string numberTo, string sum)
 	{
 
 		if (stod(sum) <= 0) return false;

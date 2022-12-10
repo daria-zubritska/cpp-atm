@@ -3,7 +3,7 @@
 CardDataScreen::CardDataScreen(std::vector<std::string> elements, std::vector<std::string> info, std::string cardNumber) 
 	: Screen(120, 40, 1005 + 200, 700 + 200), 
 	transactionMenu{ 61-19,4,40,34, elements },
-	actionMenu{ 101-20,4,40 - 4,34, {"donate to militaries"} }
+	actionMenu{ 101-20,4,40 - 4,34, {"donate to militaries", "make a transaction", "withdraw money", "top up the card"} }
 {
 	this->cardNumber = cardNumber;
 	while(false)
