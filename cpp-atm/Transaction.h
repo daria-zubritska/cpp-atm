@@ -8,13 +8,13 @@ class Transaction
 private:
     string fromCard;
     string toCard;
-    float sum;
+    double sum;
     string time;
 
 public:
     Transaction() : sum{0.0} {};
 
-    Transaction(const string& fromCard, const string& toCard, const float& sum, const string& time) :
+    Transaction(const string& fromCard, const string& toCard, const double& sum, const string& time) :
         fromCard{ fromCard }, toCard{ toCard }, sum{ sum }, time{ time }
     {};
 
@@ -26,7 +26,7 @@ public:
 
     string getFrom() const { return fromCard; };
     string getTo() const { return toCard; };
-    float getSum() const { return sum; };
+    double getSum() const { return sum; };
     string getDatetime() const { return time; };
 
     vector<string> getTransaction() 

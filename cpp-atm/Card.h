@@ -38,7 +38,7 @@ public:
 	string getPin() const { return pin; };
 	string getEndDate() const { return endDate; };
 	int getCvv() const { return cvv; };
-	float getBalance() const { return balance; };
+	double getBalance() const { return balance; };
 	string getCurrency() const { return currency; };
 	bool getIsActive() const { return isActive; };
 

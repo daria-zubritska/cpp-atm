@@ -10,13 +10,13 @@ class CreditCard : public Card
 
 private:
 
-	float credLim;
+	double credLim;
 
 public:
 	CreditCard() : credLim{0.0} {};
 
 	CreditCard(const string& number, const string& pin, const string& endDate, const int& cvv,
-		const float& balance, const string& currency, const bool& isActive, const float& credLim) :
+		const double& balance, const string& currency, const bool& isActive, const double& credLim) :
 		Card{ number, pin, endDate, cvv, balance, currency, isActive }, credLim{ credLim }
 	{};
 
@@ -26,9 +26,9 @@ public:
 
 	~CreditCard() {};
 
-	float getCredLim() const { return credLim; };
+	double getCredLim() const { return credLim; };
 
-	void setCredLim(float newCredLim) { credLim = newCredLim; };
+	void setCredLim(double newCredLim) { credLim = newCredLim; };
 
 	vector<string> getCard() override
 	{

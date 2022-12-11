@@ -8,13 +8,13 @@
 
 using namespace std;
 
-CreditCard CardDao::instanceC(const string& number, const string& pin, const string& endDate, const int& cvv, const float& balance, const string& currency, const bool& isActive, const float& credLim)
+CreditCard CardDao::instanceC(const string& number, const string& pin, const string& endDate, const int& cvv, const double& balance, const string& currency, const bool& isActive, const double& credLim)
 {
 	CreditCard c(number, pin, endDate, cvv, balance, currency, isActive, credLim);
 	return c;
 }
 
-DebitCard CardDao::instanceD(const string& number, const string& pin, const string& endDate, const int& cvv, const float& balance, const string& currency, const bool& isActive)
+DebitCard CardDao::instanceD(const string& number, const string& pin, const string& endDate, const int& cvv, const double& balance, const string& currency, const bool& isActive)
 {
 	DebitCard d(number, pin, endDate, cvv, balance, currency, isActive);
 	return d;
