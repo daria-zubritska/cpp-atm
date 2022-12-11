@@ -5,11 +5,6 @@ CardSellectionScreen::CardSellectionScreen(std::vector<std::string> elements) : 
 {
 	init(elements);
 }
-//deprecated 
-std::string CardSellectionScreen::getSelectedCard()
-{
-	return menus[0].getElements()[menus[0].getCursorPosition()];
-}
 
 int CardSellectionScreen::getCursorPosition()
 {
@@ -19,7 +14,6 @@ int CardSellectionScreen::getCursorPosition()
 void CardSellectionScreen::init(std::vector<std::string> elements)
 {
 	windows.push_back({ 0,0,width,height });
-	//windows.push_back({41,9,})
 	labels.push_back({ 31,5,"SELECT CARD" });
 	menus.push_back({ 31,6,60,20,elements });
 }

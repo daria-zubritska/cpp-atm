@@ -9,7 +9,6 @@ const std::vector<std::string> frameSymbols = ConsoleUtils::getFrameSymbols();
 
 void ConsoleUtils::resize(RECT rect)
 {
-    //if(ConsoleUtils::consoleHwnd == nullptr)
     ConsoleUtils::width = rect.right - rect.left;
     ConsoleUtils::height = rect.bottom - rect.top;
     HWND consoleHwnd = GetConsoleWindow();
@@ -25,7 +24,6 @@ void ConsoleUtils::setCursorPosition(int x, int y)
 
 SHORT ConsoleUtils::GetKey() 
 {
-	//lol what is this? 
 	keybd_event(VK_RETURN, 0, KEYEVENTF_KEYUP, 0);
 	int a;
 	while (TRUE)

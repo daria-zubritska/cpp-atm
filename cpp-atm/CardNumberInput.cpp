@@ -1,6 +1,5 @@
 #pragma once
 #include "CardNumberInput.h"
-//header breaks everything, idunno why
 #include "UIModels.h"
 
 

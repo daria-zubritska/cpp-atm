@@ -6,7 +6,6 @@
 class ConsoleUtils
 {
 public:
-	//delete this???
 	static int height;
 	static int width;
 	static void resize(RECT rect);

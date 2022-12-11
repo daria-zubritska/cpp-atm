@@ -172,7 +172,6 @@ int Menu::onArrows(SHORT key)
 			//shift up
 			for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
 			{
-				///TODO: extend value before pushing or modify label??
 				labels[i - scrollIndex].setText(elements[i]);
 				labels[i - scrollIndex].draw();
 			}
@@ -206,7 +205,6 @@ int Menu::onArrows(SHORT key)
 			//shift down
 			for (int i = scrollIndex; i < scrollIndex + visibleCount && i < elements.size(); ++i)
 			{
-				///TODO: extend value before pushing or modify label??
 				labels[i - scrollIndex].setText(elements[i]);
 				labels[i - scrollIndex].draw();
 			}

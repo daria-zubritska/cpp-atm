@@ -13,9 +13,6 @@ private:
 
 public:
 	CardSellectionScreen(std::vector<std::string> elements);
-	//deprecated, will be removed soon
-	std::string getSelectedCard();
-	//
 	int getCursorPosition();
 	void draw() override;
 	int execute() override;
