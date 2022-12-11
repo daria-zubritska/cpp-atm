@@ -179,6 +179,7 @@
     <ClCompile Include="sqlite\sqlite3.c" />
     <ClCompile Include="TransactionDao.cpp" />
     <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />

@@ -1,3 +1,4 @@
+#pragma once
 #include "CardDataScreen.h"
 
 CardDataScreen::CardDataScreen(std::vector<std::string> elements, std::vector<std::string> info, std::string cardNumber) 

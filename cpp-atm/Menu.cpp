@@ -18,7 +18,6 @@ Model Menu::generateModel(int xsize,int ysize)
 	Model model;
 	model.symbols = "";
 	int columnOffcet{ 2 }, elementHeight{ 3 };
-	int elementx, elementy;
 	visibleCount = (ysize - 2) / 3;
 	int c{ 0 };
 	for (int j = 0; j < ysize; ++j)
@@ -147,19 +146,19 @@ int Menu::onArrows(SHORT key)
 		--cursorPosition;
 		if (cursorPosition == -1)
 		{
-			cursorPosition = elements.size() - 1;
+			cursorPosition = (int)elements.size() - 1;
 			scrollIndex = (int)elements.size() - visibleCount;
 			if (scrollIndex < 0)
 			{
 				scrollIndex = 0;
-				cursorPosition = elements.size() - 1;
+				cursorPosition = (int)elements.size() - 1;
 			}
 			else
 			{
-				int buf = elements.size() < visibleCount ? elements.size() - 1 : visibleCount - 1;
+				int buf = (int)elements.size() < visibleCount ? (int)elements.size() - 1 : visibleCount - 1;
 				for (int i = buf; i >= 0; --i)
 				{
-					labels[i].setText(elements[i + elements.size() - buf - 1]);
+					labels[i].setText(elements[i + (int)elements.size() - buf - 1]);
 					labels[i].draw();
 				}
 			}
@@ -214,6 +213,7 @@ int Menu::onArrows(SHORT key)
 		return 0;
 		break;
 	}
+	return -1;
 }
 
 void Menu::preExecute()

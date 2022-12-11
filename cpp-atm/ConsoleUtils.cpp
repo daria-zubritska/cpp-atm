@@ -15,9 +15,9 @@ void ConsoleUtils::resize(RECT rect)
     MoveWindow(consoleHwnd, rect.left, rect.top, rect.right - rect.left, rect.bottom - rect.top, TRUE);
 }
 
-void ConsoleUtils::setCursorPosition(int x, int y)
+void ConsoleUtils::setCursorPosition(unsigned int x, unsigned int y)
 {
-    COORD pos = { x, y };
+    COORD pos = { (SHORT)x, (SHORT)y };
     HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleCursorPosition(output, pos);
 }

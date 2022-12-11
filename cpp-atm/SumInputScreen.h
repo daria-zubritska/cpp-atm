@@ -1,7 +1,7 @@
 #pragma once
 #include "Screen.h"
 #include "Label.h"
-#include "Window.cpp"
+#include "Window.h"
 #include "Menu.h"
 #include "SumInput.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "Screen.h"
-#include "Window.cpp"
+#include "Window.h"
 #include "Label.h"
 #include "Menu.h"
 

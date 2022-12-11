@@ -1,29 +1,21 @@
-﻿#pragma once
-#include <iostream>
-#include "Model.h"
-#include "UIModels.h"
-#include "ConsoleUtils.h"
-#include "Control.h"
+#pragma once
+#include "Window.h"
 
-class Window : public Control
+Window::Window(int xpos, int ypos, int xsize, int ysize) :Control(xpos, ypos, Model::generateFrame(xsize, ysize))
 {
-public:
-	Window(int xpos,int ypos,int xsize, int ysize) :Control(xpos,ypos,Model::generateFrame(xsize,ysize))
-	{
-		
-	}
 
-	void draw() override
-	{
-		ConsoleUtils::drawAt(xpos,ypos,model.getRows());
-	}
-	
-private:
-	int execute() override { return 0; };
-	int onReturn() override { return 0; };
-	int onEscape() override { return 0; };
-	int onTab() override { return 0; };
-	int onArrows(SHORT key) override { return 0; };
-	int otherInputs(SHORT key) override { return 0; };
-	void preExecute() override {};
-};
+}
+
+void Window::draw()
+{
+	ConsoleUtils::drawAt(xpos, ypos, model.getRows());
+}
+
+
+int Window::execute() { return 0; };
+int Window::onReturn() { return 0; };
+int Window::onEscape() { return 0; };
+int Window::onTab() { return 0; };
+int Window::onArrows(SHORT key) { return 0; };
+int Window::otherInputs(SHORT key) { return 0; };
+void Window::preExecute() {};

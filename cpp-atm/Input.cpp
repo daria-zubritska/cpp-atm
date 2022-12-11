@@ -11,7 +11,7 @@ Input::Input(int xpos, int ypos, int xSize, int ySize, int length) : Control(xpo
 
 void Input::preExecute()
 {
-	ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
+	ConsoleUtils::setCursorPosition(xpos + 2 + (int)buffer.length(), ypos + 1);
 }
 
 int Input::otherInputs(SHORT key)
@@ -37,17 +37,17 @@ void Input::onBack()
 
 void Input::addSymbol(SHORT key)
 {
-	ConsoleUtils::drawAt(xpos + 2 + buffer.length(), ypos + 1, (char)key);
+	ConsoleUtils::drawAt(xpos + 2 + (int)buffer.length(), ypos + 1, (char)key);
 	buffer += (char)key;
 	if (buffer.length() < length)
-		ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
+		ConsoleUtils::setCursorPosition(xpos + 2 + (int)buffer.length(), ypos + 1);
 }
 
 void Input::removeSymbol()
 {
-	ConsoleUtils::drawAt(xpos + 2 + buffer.size() - 1, ypos + 1, ' ');
-	buffer.resize(buffer.length() - 1);
-	ConsoleUtils::setCursorPosition(xpos + 2 + buffer.size(), ypos + 1);
+	ConsoleUtils::drawAt(xpos + 2 + (int)buffer.size() - 1, ypos + 1, ' ');
+	buffer.resize((int)buffer.length() - 1);
+	ConsoleUtils::setCursorPosition(xpos + 2 + (int)buffer.size(), ypos + 1);
 }
 
 std::string Input::getBuffer()

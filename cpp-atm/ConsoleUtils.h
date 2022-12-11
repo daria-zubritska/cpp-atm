@@ -9,7 +9,7 @@ public:
 	static int height;
 	static int width;
 	static void resize(RECT rect);
-	static void setCursorPosition(int x, int y);
+	static void setCursorPosition(unsigned int x, unsigned int y);
 	static const std::vector<std::string> frameSymbols;
 
 	static void drawAt(int x, int y, std::vector<std::string> rows);

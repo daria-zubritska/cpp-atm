@@ -81,7 +81,7 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files\UI\Controls\Inputs</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="Window.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClCompile>
     <ClCompile Include="LoginScreen.cpp">
@@ -152,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="CardNumberInputScreen.cpp">
       <Filter>Source Files\UI\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Source Files\UI\Controls</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
