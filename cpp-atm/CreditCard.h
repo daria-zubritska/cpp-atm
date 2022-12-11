@@ -33,7 +33,9 @@ public:
 	vector<string> getCard() override
 	{
 		vector<string> cardInfo = Card::getCard();
-		cardInfo.push_back("Credit limit: " + to_string(credLim));
+		auto buf = to_string(credLim);
+		buf.resize(buf.size() - 4);
+		cardInfo.push_back("Credit limit: " + buf);
 		return cardInfo;
 	}
 

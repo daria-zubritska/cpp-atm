@@ -56,7 +56,9 @@ public:
 		cardInfo.push_back("Number: " + number);
 		cardInfo.push_back("EndDate: " + endDate);
 		cardInfo.push_back("CVV: " + to_string(cvv));
-		cardInfo.push_back("Balance: " + to_string(balance));
+		auto buf = to_string(balance);
+		buf.resize(buf.size() - 4);
+		cardInfo.push_back("Balance: " + buf);
 		cardInfo.push_back("Currency: " + currency);
 		if (isActive)
 		{

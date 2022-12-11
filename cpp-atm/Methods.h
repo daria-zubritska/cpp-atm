@@ -80,7 +80,9 @@ public:
 
 		for (Transaction const& i : transVector(number))
 		{
-			transactionStrings.push_back(to_string(k) + " " + i.getDatetime() + " " + to_string(i.getSum()));
+			auto buf = to_string(i.getSum());
+			buf.resize(buf.size() - 4);
+			transactionStrings.push_back(to_string(k) + " " + i.getDatetime() + " " + buf);
 			k++;
 		}
 

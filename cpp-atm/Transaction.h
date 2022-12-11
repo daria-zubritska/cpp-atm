@@ -35,7 +35,11 @@ public:
 
         transactionInfo.push_back("Sender: " + fromCard);
         transactionInfo.push_back("Receiver: " + toCard);
-        transactionInfo.push_back("Sum: " + to_string(sum));
+
+        auto buf = to_string(sum);
+        buf.resize(buf.size() - 4);
+
+        transactionInfo.push_back("Sum: " + buf);
         transactionInfo.push_back("Time: " + time);
 
         return transactionInfo;

@@ -8,6 +8,7 @@
 #include "IExecutable.h"
 #include "IDrawable.h"
 
+
 class Screen : public IExcecutable, public IDrawable
 {
 protected:
