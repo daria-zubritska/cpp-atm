@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Transaction TransactionDao::instance(const string& fromCard, const string& toCard, const long double& sum, const string& dateTime)
+Transaction TransactionDao::instance(const string& fromCard, const string& toCard, const float& sum, const string& dateTime)
 {
 	return Transaction(fromCard, toCard, sum, dateTime);
 }

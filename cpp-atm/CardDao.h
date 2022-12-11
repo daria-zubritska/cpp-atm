@@ -19,9 +19,9 @@ private:
 	DBController* _db;
 
 	CreditCard instanceC(const string& number, const string& pin, const string& endDate, const int& cvv,
-		const double& balance, const string& currency, const bool& isActive, const double& credLim);
+		const float& balance, const string& currency, const bool& isActive, const float& credLim);
 	DebitCard instanceD(const string& number, const string& pin, const string& endDate, const int& cvv,
-		const double& balance, const string& currency, const bool& isActive);
+		const float& balance, const string& currency, const bool& isActive);
 
 public:
 

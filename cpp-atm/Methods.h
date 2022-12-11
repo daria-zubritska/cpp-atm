@@ -147,7 +147,7 @@ public:
 			struct tm timeStruct;
 			localtime_s(&timeStruct, &t);
 			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
-			string to = "";
+			string to = "ZSU";
 
 			return tdao.insertTrans(number, to, stod(sum), str);
 		}
