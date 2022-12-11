@@ -7,8 +7,8 @@ struct Model
 {
 public:
 	std::string symbols;
-	int width;
-	int height;
+	int width = 0;
+	int height = 0;
 	std::vector<RECT> replacableRegions{};
 	std::vector<char> replacableSymbols{};
 

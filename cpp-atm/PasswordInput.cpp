@@ -6,8 +6,8 @@ PasswordInput::PasswordInput(int xpos, int ypos, int xSize, int ySize) : Input(x
 
 void PasswordInput::addSymbol(SHORT key)
 {
-	ConsoleUtils::drawAt(xpos + 2 + buffer.length(), ypos + 1, '*');
+	ConsoleUtils::drawAt(xpos + 2 + (int)buffer.length(), ypos + 1, '*');
 	buffer += (char)key;
 	if (buffer.length() < length)
-		ConsoleUtils::setCursorPosition(xpos + 2 + buffer.length(), ypos + 1);
+		ConsoleUtils::setCursorPosition(xpos + 2 + (int)buffer.length(), ypos + 1);
 }
