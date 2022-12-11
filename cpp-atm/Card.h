@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include <windows.h>
 #include <string>
 #include <vector>
@@ -37,7 +38,7 @@ public:
 	string getPin() const { return pin; };
 	string getEndDate() const { return endDate; };
 	int getCvv() const { return cvv; };
-	double getBalance() const { return balance; };
+	float getBalance() const { return balance; };
 	string getCurrency() const { return currency; };
 	bool getIsActive() const { return isActive; };
 
@@ -70,18 +71,5 @@ public:
 		}
 
 		return cardInfo;
-	}
-
-	void DonateOnZSU(const long double& sum)
-	{
-		if (sum <= balance)
-		{
-			balance -= sum;
-			MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
-		}
-		else
-		{
-			MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
-		}
 	}
 };

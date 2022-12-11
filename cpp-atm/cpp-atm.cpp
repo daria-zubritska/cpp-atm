@@ -40,11 +40,12 @@ void start()
 {
 	Methods methods;
 
-	LoginScreen logScreen;
-	logScreen.draw();
 
 	while (true)
 	{
+
+		LoginScreen logScreen;
+		logScreen.draw();
 
 		if (logScreen.execute() == 0)
 		{
@@ -85,7 +86,7 @@ void start()
 										if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
 										else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
 									}
-									break;
+									continue;
 								}
 								case 1:
 								{
@@ -104,7 +105,7 @@ void start()
 											else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
 										}
 									}
-									break;
+									continue;
 								}
 								case 2:
 								{
@@ -117,7 +118,7 @@ void start()
 										if (success) MessageBox(NULL, L"The money has been successfully withdrawn", L"Success", MB_ICONINFORMATION);
 										else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
 									}
-									break;
+									continue;
 								}
 								case 3:
 								{
@@ -130,16 +131,20 @@ void start()
 										if (success) MessageBox(NULL, L"The money has been successfully added", L"Success", MB_ICONINFORMATION);
 										else MessageBox(NULL, L"Operation failed", L"Error", MB_ICONERROR);
 									}
-									break;
+									continue;
 								}
 								}
-								break;
+								continue;
 							}
 							case 1:
 							{
 								TransactionInfoScreen transInfoScr(methods.getAllTransByCard(number).at(cardData.getSelectedTransactionIndex()).getTransaction());
 								transInfoScr.draw();
 								transInfoScr.execute();
+								continue;
+							}
+							case 2:
+							{
 								break;
 							}
 							}
@@ -147,6 +152,7 @@ void start()
 							break;
 						}
 					}
+					else break;
 				}
 			}
 			else
