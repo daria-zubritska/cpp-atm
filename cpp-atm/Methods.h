@@ -97,24 +97,11 @@ public:
 		return userTransactions;
 	};
 
-	vector<string> getCardInfoByNumber(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& number)
+	vector<string> getCardInfoByNumber(string& number)
 	{
-		vector<string> info;
-		for (CreditCard& i : userCCards)
-		{
-			if (i.getNumber() == number)
-			{
-				info = i.getCard();
-			}
-		}
-
-		for (DebitCard& i : userDCards)
-		{
-			if (i.getNumber() == number)
-			{
-				info = i.getCard();
-			}
-		}
+		CreditCard c = cdao.getByNumberC(number, tdao);
+		DebitCard d = cdao.getByNumberD(number, tdao);
+		vector<string> info = (c.getCvv() != 0) ? c.getCard() : d.getCard();
 		return info;
 	}
 

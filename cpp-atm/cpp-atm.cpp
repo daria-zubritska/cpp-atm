@@ -66,7 +66,7 @@ void start()
 						{
 							string number = cardNumbers.at(cardScreen.getCursorPosition());
 
-							CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(userCCards, userDCards, number), "Card: " + number);
+							CardDataScreen cardData(methods.getAllTransStringsByCard(number), methods.getCardInfoByNumber(number), "Card: " + number);
 							cardData.draw();
 
 							switch (cardData.execute())

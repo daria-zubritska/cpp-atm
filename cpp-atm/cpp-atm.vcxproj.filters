@@ -203,9 +203,6 @@
     <ClInclude Include="Label.h">
       <Filter>Header Files\UI\Controls</Filter>
     </ClInclude>
-    <ClInclude Include="Methods.h">
-      <Filter>Header Files\Account</Filter>
-    </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>Header Files\Utility</Filter>
     </ClInclude>
@@ -235,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="IExecutable.h">
       <Filter>Header Files\UI\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Methods.h">
+      <Filter>Header Files\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
