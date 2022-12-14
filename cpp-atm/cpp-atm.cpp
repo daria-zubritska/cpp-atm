@@ -99,9 +99,10 @@ void start()
 										if (sumInpScr.execute() == 0)
 										{
 											string to = cardNumInpScr.getValue();
-											bool success = methods.newTransaction(userCCards, userDCards, number, to, sumInpScr.getValue());
+											int success = methods.newTransaction(userCCards, userDCards, number, to, sumInpScr.getValue());
 
-											if (success) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
+											if (success == 0) MessageBox(NULL, L"The money has been successfully transferred", L"Success", MB_ICONINFORMATION);
+											else if (success == 1) MessageBox(NULL, L"Recieving card is either inactive or non-existent", L"Error", MB_ICONERROR);
 											else MessageBox(NULL, L"You don't have enough money on your card", L"Error", MB_ICONERROR);
 										}
 									}

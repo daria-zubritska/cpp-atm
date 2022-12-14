@@ -142,11 +142,11 @@ public:
 		}
 	}
 
-	bool newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string& numberTo, string sum)
+	int newTransaction(vector<CreditCard>& userCCards, vector<DebitCard>& userDCards, string& numberFrom, string& numberTo, string sum)
 	{
 
-		if (stod(sum) <= 0) return false;
-		if (numberFrom == numberTo) return false;
+		if (stod(sum) <= 0) return -1;
+		if (numberFrom == numberTo) return 1;
 
 		bool exists = false;
 		double lim = 0;
@@ -155,11 +155,11 @@ public:
 			if (i.getNumber() == numberFrom)
 			{
 				lim = i.getBalance() + i.getCredLim();
-				if (!i.getIsActive()) return false;
+				if (!i.getIsActive()) return 1;
 			}
 			if (i.getNumber() == numberTo) {
 				exists = true;
-				if (!i.getIsActive()) return false;
+				if (!i.getIsActive()) return 1;
 			}
 		}
 
@@ -168,17 +168,17 @@ public:
 			if (i.getNumber() == numberFrom)
 			{
 				lim = i.getBalance();
-				if (!i.getIsActive()) return false;
+				if (!i.getIsActive()) return 1;
 			}
 			if (i.getNumber() == numberTo) {
 				exists = true;
-				if (!i.getIsActive()) return false;
+				if (!i.getIsActive()) return 1;
 			}
 		}
 
-		if (!exists) return exists;
+		if (!exists) return 1;
 
-		if (lim - stod(sum) < 0) return false;
+		if (lim - stod(sum) < 0) return -1;
 		else {
 
 			time_t t = time(0);
@@ -186,7 +186,9 @@ public:
 			localtime_s(&timeStruct, &t);
 			string str = to_string(timeStruct.tm_mday) + '/' + to_string(timeStruct.tm_mon) + '/' + to_string(1900 + timeStruct.tm_year);
 
-			return tdao.insertTrans(numberFrom, numberTo, stod(sum), str);
+			tdao.insertTrans(numberFrom, numberTo, stod(sum), str);
+
+			return 0;
 		}
 	}
 
