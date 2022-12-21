@@ -52,12 +52,10 @@ public:
 		return userDCards;
 	};
 
-
 	Transaction getTransById(int id)
 	{
 		return tdao.getById(id);
 	}
-
 
 	vector<Transaction> transVector(const string& number)
 	{
@@ -297,8 +295,5 @@ public:
 
 		return cardNumbers;
 	}
-
-
-
 
 };
