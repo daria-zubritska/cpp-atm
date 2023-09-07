@@ -3,7 +3,6 @@
 
 class SumInput : public Input
 {
-
 public:
 	SumInput(int xpos, int ypos, int ySize, int xSize, int length);
 

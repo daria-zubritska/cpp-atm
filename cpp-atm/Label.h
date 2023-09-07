@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-class Label
+#include "IDrawable.h"
+class Label : IDrawable
 {
 protected:
 	std::string text;
@@ -8,7 +9,7 @@ protected:
 public:
 	Label(int xpos,int ypos,int length,std::string text);
 	Label(int xpos, int ypos, std::string text);
-	void draw();
+	void draw() override;
 	int getXpos();
 	int getYpos();
 	void setXpos(int xpos);
